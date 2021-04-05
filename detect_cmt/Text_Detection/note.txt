@@ -1,0 +1,2 @@
+Detect Mặt sau chứng minh thư
+Bao gồm các file checkpoint đã train khoảng 20000 steps
