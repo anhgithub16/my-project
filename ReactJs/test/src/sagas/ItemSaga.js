@@ -5,6 +5,8 @@ import * as types from '../constant'
 import deleteItemAPI from '../fetchAPI/deleteItemAPI'
 import updateItemAPI from '../fetchAPI/updateItemAPI'
 import searchItemAPI from '../fetchAPI/searchItemAPI'
+import paginate from '../fetchAPI/paginate'
+
 function* getListItem() {
     try {
         const res = yield getItems()
@@ -12,6 +14,10 @@ function* getListItem() {
             type: types.GET_ITEM_SUCCESS,
             payload: res
         })
+        // yield put({
+        //     type: types.PAGINATE_ITEM_REQUEST,
+        //     payload:res
+        // })
     } catch (error) {
         yield put({
             type: types.GET_ITEM_FAILURE,
@@ -21,7 +27,23 @@ function* getListItem() {
         })
     }
 }
-
+function* paginateItem(action) {
+    try {
+        const data = action.payload
+        const res = yield paginate(data)
+        yield put({
+            type: types.PAGINATE_ITEM_SUCCESS,
+            payload: res
+        })
+    } catch (error) {
+        yield put({
+            type: types.PAGINATE_ITEM_FAILURE,
+            payload: {
+                errorMessage: error.message
+            }
+        })
+    }
+}
 function* addItemSaga(action) {
     console.log(action.payload)
     try {
@@ -49,7 +71,6 @@ function* deleteItemSaga(action) {
     try {
         const dataToApi = {
             id: action.payload.id,
-            txt:action.payload.text
         }
         yield deleteItemAPI(dataToApi)
         yield put({
@@ -57,7 +78,7 @@ function* deleteItemSaga(action) {
         })
         yield put({
             type: types.SEARCH_ITEM_REQUEST,
-            payload:action.payload.text
+            payload: action.payload.textField
         })
     } catch (error) {
         yield put({
@@ -81,7 +102,8 @@ function* updateItemSaga(action) {
             type: types.UPDATE_ITEM_SUCCESS
         })
         yield put({
-            type: types.GET_ITEM_REQUEST
+            type: types.SEARCH_ITEM_REQUEST,
+            payload:action.payload.textField
         })
     } catch (error) {
         yield put({
@@ -101,7 +123,10 @@ function* searchListItem(action) {
         const res = yield searchItemAPI(dataToApi)
         yield put({
             type: types.SEARCH_ITEM_SUCCESS,
-            payload: res
+            payload: {
+                listItem: res,
+                textField: action.payload
+            }
         })
     } catch (error) {
         yield put({
@@ -114,10 +139,11 @@ function* searchListItem(action) {
 }
 
 export const ItemSaga = [
-    takeEvery(types.GET_ITEM_REQUEST,getListItem),
-    takeEvery(types.ADD_ITEM_REQUEST,addItemSaga),
-    takeEvery(types.DELETE_ITEM_REQUEST,deleteItemSaga),
-    takeEvery(types.UPDATE_ITEM_REQUEST,updateItemSaga),
-    takeEvery(types.SEARCH_ITEM_REQUEST,searchListItem)
+    takeEvery(types.GET_ITEM_REQUEST, getListItem),
+    takeEvery(types.ADD_ITEM_REQUEST, addItemSaga),
+    takeEvery(types.DELETE_ITEM_REQUEST, deleteItemSaga),
+    takeEvery(types.UPDATE_ITEM_REQUEST, updateItemSaga),
+    takeEvery(types.SEARCH_ITEM_REQUEST, searchListItem),
+    takeEvery(types.PAGINATE_ITEM_REQUEST, paginateItem)
 
 ];

@@ -24,6 +24,8 @@ class ItemPageContainer extends React.Component {
                         this.props.updateDispatch(data)
                     }} hamSearch={(data) => {
                         this.props.searchDispatch(data)
+                    }} hamPaginate={(data)=>{
+                        this.props.paginateDispatch(data)
                     }} {...this.props} />
                 }
             </div>
@@ -35,6 +37,7 @@ const mapStateToProps = (state) => {
     return {
         items: state.items.listItem,
         isLoading: state.items.isFetching,
+        textField:state.items.textField
     }
 }
 
@@ -55,6 +58,9 @@ const mapDispatchToProps = (dispatch) => {
             },
             searchDispatch: (data) => {
                 dispatch(actions.searchItemAction(data))
+            },
+            paginateDispatch: (data) => {
+                dispatch(actions.paginateItem(data))
             }
         }
     )

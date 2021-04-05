@@ -29,3 +29,9 @@ export function searchItemAction(payload){
         payload
     })
 }
+export function paginateItem(payload){
+    return({
+        type: types.PAGINATE_ITEM_REQUEST,
+        payload
+    })
+}

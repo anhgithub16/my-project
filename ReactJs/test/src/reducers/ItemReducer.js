@@ -5,11 +5,13 @@ const DEFAULT_STATE = {
     error: false,
     errorMessage: null,
     data: "",
+    textField:"",
     data1: []
 }
 
 export default (state = DEFAULT_STATE, action) => {
     switch (action.type) {
+        case types.PAGINATE_ITEM_REQUEST:
         case types.SEARCH_ITEM_REQUEST:
         case types.UPDATE_ITEM_REQUEST:
         case types.DELETE_ITEM_REQUEST:
@@ -19,6 +21,7 @@ export default (state = DEFAULT_STATE, action) => {
                 ...state,
                 isFetching: true,
             }
+        case types.PAGINATE_ITEM_SUCCESS:
         case types.GET_ITEM_SUCCESS:
             return {
                 ...state,
@@ -38,7 +41,7 @@ export default (state = DEFAULT_STATE, action) => {
                 isFetching: false,
                 error: false,
                 errorMessage: null,
-                data: action.payload
+                data: action.payload,
             }
         case types.ADD_ITEM_SUCCESS:
             return {
@@ -48,12 +51,14 @@ export default (state = DEFAULT_STATE, action) => {
                 errorMessage: null
             }
         case types.SEARCH_ITEM_SUCCESS:
+            //const {listItem,textField} = action.payload
             return {
                 ...state,
                 isFetching: false,
-                listItem: action.payload,
-               
+                listItem:action.payload.listItem,
+                textField:action.payload.textField
             }
+        case types.PAGINATE_ITEM_FAILURE:
         case types.UPDATE_ITEM_FAILURE:
         case types.UPDATE_ITEM_FAILURE:
         case types.DELETE_ITEM_FAILURE:

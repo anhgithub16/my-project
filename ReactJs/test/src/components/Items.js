@@ -7,11 +7,16 @@ class Items extends Component {
         objectDelete: {
             id: "",
             text: ""
-        }
+        },
+        textField: "",
+        totalPage: "",
+        page: "1",
+        length: "",
     }
-    handleAdd =  (data) => {
-         this.setState({ inputAdd: data })
-         console.log('du lieu in add',this.state.inputAdd)
+    handleAdd = (data) => {
+        this.setState({ inputAdd: data, textField: data })
+
+        console.log('du lieu in add', this.state.inputAdd)
     }
 
     handleAddButton = () => {
@@ -30,9 +35,9 @@ class Items extends Component {
 
         const data = {
             id: data_id,
-            text: this.state.inputSearch
+            textField: this.props.textField
         }
-        console.log('du lieu handleDelete '+this.state.inputSearch)
+        console.log('du lieu handleDelete ' + data.textField)
         this.props.hamDelete(data)
     }
 
@@ -40,14 +45,15 @@ class Items extends Component {
     handleUpdate = (data_id) => {
         const data = {
             id: data_id,
-            name: this.state.inputAdd
+            name: this.state.inputAdd,
+            textField: this.props.textField
         }
         this.props.hamUpdate(data)
-        
+
     }
 
     //search
-    handleSearch = () => {
+    handleSearch = (length) => {
         //this.setState({ inputSearch: data })
         // const text = {
         //     txt: data
@@ -63,27 +69,59 @@ class Items extends Component {
             inputSearch: this.state.inputAdd
         })
         this.props.hamSearch(this.state.inputAdd);
+        console.log('Dữ liệu listdata', length)
     }
+    handlePaginate = (data) => {
+        this.props.hamPaginate(data)
+    }
+    hamXuLy = (ar) => {
+        let arr = [];
+        for (let index = 1; index < (ar/3)+1
+        ; index++) {
+            arr.push(<button onClick={()=>{
+                let da = index
+                this.props.hamPaginate(da)
+            }}>{index}</button>)
+        }
+        return (arr)
 
+    }
     render() {
-        let listData = []
+        let listData = [];
+        let btt = [];
+        let pagin = []
         if (this.props.items) {
             listData = this.props.items.map((item, key) => {
-                return (
+                let dt = [
                     <tr key={key}>
                         <th>{item.id}</th>
                         <th>{item.name}</th>
                         <th><button onClick={() => {
-                         
+
                             this.handleDelete(item.id)
                         }}>Xóa</button></th>
                         <th><button onClick={() => {
                             this.handleUpdate(item.id)
                         }}>Sửa</button></th>
                     </tr>
+                ]
+                // let arr = [];
+                // for (let index = 1; index < 6; index++) {
+                //         arr.push(<button>{index}</button>)
+
+                // }
+                let dataMain = [
+                    dt
+                    //arr
+                ]
+                return (
+                    dataMain
                 )
             })
+            pagin = this.hamXuLy(listData.length)
+
         }
+
 
         return (
             <div className="">
@@ -104,9 +142,14 @@ class Items extends Component {
                             this.handleDelete()
                         }}>Delete</button>
                         <button onClick={() => {
-                           
-                            this.handleSearch()
+                            this.handleSearch(listData.length)
                         }}>Search</button>
+                        <button onClick={() => {
+                            this.handlePaginate()
+                        }}>Paginate</button>
+                        <button onClick={() => {
+                            this.hamXuLy()
+                        }}>Xử lý</button>
                     </div>
                     <table className="list-item">
                         <tbody>
@@ -115,6 +158,22 @@ class Items extends Component {
                                 <th className="name">Tên của dữ liệu</th>
                             </tr>
                             {listData}
+                            <tr>
+                                <button onClick={() => {
+                                    this.handlePaginate()
+                                }}>1</button>
+                                <a onClick={() => {
+                                    this.handlePaginate(2)
+                                }}>2</a>
+                                <a onClick={() => {
+                                    this.handlePaginate(3)
+                                }}>3</a>
+                                <a onClick={() => {
+                                    this.handlePaginate(4)
+                                }}>4</a>
+
+                            </tr>
+                        {pagin}
                         </tbody>
                     </table>
                 </div>

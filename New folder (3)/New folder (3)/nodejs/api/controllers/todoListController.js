@@ -19,7 +19,7 @@ exports.upload = function (req, res) {
     });
   };
 
-//
+//get all
 exports.list_all_tasks = function (req, res) {
     Task.find({}, (loi, Task) => {
         if (loi) {
@@ -137,7 +137,8 @@ exports.demobody = function (req, res) {
         name: req.body.name
     }
     res.send({
-        dulieu1: dulieu1, dulieu2: dulieu2
+        dulieu1: dulieu1, 
+        dulieu2: dulieu2
     });
 };
 exports.timkiem = function (req, res) {

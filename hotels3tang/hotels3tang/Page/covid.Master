@@ -1,0 +1,1303 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="covid.master.cs" Inherits="hotels3tang.Page.covid" %>
+
+<!DOCTYPE html>
+
+<%--<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>--%>
+
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/StyleSheetCovid.css"/>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels.com - Deals & Discounts for Hotel Reservations from Luxury Hotels to Budget Accommodations</title>
+    <meta content="text/html;charset=UTF-8" http-equiv="content-type">
+</head>
+<body data-os-imp="pageImpression"><a class="cta skip-to-main-content" href="#main-content">Đi đến nội dung chính.</a>
+    <div role="banner" id="header-full" class="header-hcom clearfix">
+        <script>window.dio = window.dio || {}; window.dio.module = window.dio.module || {}; dio.module.header = { "conf": { "data": { "path": "\/\/a.cdn-hotels.com\/uswest2\/da", "appbuild": "/62.0.37" }, "template": { "path": "https:\/\/a.cdn-hotels.com\/uswest2\/da\/assets/cat/js/63.0.10598/" } } }; dio.common = dio.common || {}; dio.common.request = { "targetUrl": "H4sIAAAAAAAAANMvSExP1U_OL8rPSyzLLCot1k3Kz8_OzEvXzcxLyy_KTSzJzM_Tt8_JT07MSbVN1tNzyi4riUwrME53cdRTK8gvBolFBhZHGlSZ5ZpGZusBAL5BEFxRAAAA" };</script>
+        <header class="desktop ">
+            <nav class="header-primary-nav">
+                <div class="fixed-width flex-cont-outer">
+                    <div class="flex-cont-inner">
+                        <div class="logo-cont"><a href="/?intlid=OTHER+%3A%3A+header_main_section" rel="nofollow"><img
+                                    class="logo"
+                                    src="https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/logos/logo_vi_VN.png"
+                                    alt="Quay lại trang chủ Hotels.com" width="234" /></a></div>
+                        <div class="context-selector">
+                            <div><a id="header-toggle-pos" aria-haspopup="true" href="/global_sites.html"><span
+                                        class="sprite sprite-flags sprite-flags-vnm"></span><span
+                                        class="offscreen">Tiếng Việt (Việt Nam)</span></a></div>
+                            <div><button id="header-toggle-currency" aria-haspopup="true">VND</button></div>
+                        </div>
+                    </div>
+                    <ul class="primary-section">
+                        <li class="help-section">
+                            <div class="toggle nav-section-toggle"><input type="checkbox" id="primary-section-Trợ giúp"
+                                    class="offscreen" /><label for="primary-section-Trợ giúp"
+                                    aria-controls="primary-section-Trợ giúp-cont" aria-expanded="false">Trợ giúp<span
+                                        class="toggler toggler-opened"></span><span
+                                        class="toggler toggler-closed"></span></label>
+                                <div class="toggle-cont" id="primary-section-Trợ giúp-cont">
+                                    <ul>
+                                        <li><a href="/account/bookingslist.html?intlid=OTHER+%3A%3A+header_help_section"
+                                                rel="nofollow">Thay đổi đặt phòng</a></li>
+                                        <li><a href="/customer_care/index.html?intlid=OTHER+%3A%3A+header_help_section"
+                                                id="hdr-help" rel="nofollow" target="_blank">Câu hỏi thường gặp</a></li>
+                                        <li><a href="/customer_care/index.html?intlid=OTHER+%3A%3A+header_help_section"
+                                                rel="nofollow" target="_blank">Liên hệ với chúng tôi</a></li>
+                                        <li class="open-opinionlab"><a
+                                                href="mailto:userexperience@hotels.com?subject=Site+feedback%3A+OTHER%7Cvi_VN%7CHCOM_VN%7Cvi.hotels.com"
+                                                rel="nofollow">Phản hồi về trang web</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="/account/bookingslist.html?intlid=OTHER+%3A%3A+header_main_section"
+                                id="hdr-customer-bookings" class="icon-business"
+                                rel="clickReportc..GO0K0p-rZ05ntMR7ek-MKJAq_cwLiOPLiNlY0Dk9eAiemqMnXZwlOeUTd5ndIxhQHhItWarjx7jaXzGInjLPgBPfhMxIr-co">Đặt
+                                phòng của bạn</a></li>
+                        <li><a href="/profile/signup.html?intlid=OTHER+%3A%3A+header_main_section&amp;target=H4sIAAAAAAAAANMvSExP1U_OL8rPSyzLLCot1k3Kz8_OzEvXzcxLyy_KTSzJzM_Tt8_JT07MSbVN1tNzyi4riUwrME53cdRTK8gvBolFBhZHGlSZ5ZpGZusBAL5BEFxRAAAA"
+                                id="hdr-create" rel="nofollow">Tạo tài khoản</a></li>
+                        <li class="dark-bg"><a
+                                href="/profile/signin.html?intlid=OTHER+%3A%3A+header_main_section&amp;target=H4sIAAAAAAAAANMvSExP1U_OL8rPSyzLLCot1k3Kz8_OzEvXzcxLyy_KTSzJzM_Tt8_JT07MSbVN1tNzyi4riUwrME53cdRTK8gvBolFBhZHGlSZ5ZpGZusBAL5BEFxRAAAA"
+                                id="header-sign-in" rel="nofollow">Đăng nhập</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="header-secondary-nav">
+                <div class="fixed-width">
+                    <ul class="secondary-section">
+                        <li><a href="https://welcome.expediagroup.com/vi/how-to-list-your-property-on-hotels?utm_term=unknown&amp;utm_campaign=OTHER&amp;utm_medium=referral&amp;lasttouchMktgcode=unknown&amp;utm_source=HCOM_VN-vi_VN&amp;utm_content=header-link"
+                                rel="nofollow" target="_blank">Đăng thông tin nơi lưu trú của bạn</a></li>
+                        <li><a href="/hotel-rewards-pillar/hotelscomrewards.html?intlid=OTHER+%3A%3A+header_main_section"
+                                id="hdr-rewards" rel="nofollow">Hotels.com™ Rewards</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div itemscope itemtype="http://schema.org/WebPage" class="resp-section" id="main-content">
+        <main class="inner-section">
+            <div class="resp-row">
+                <div
+                    class="resp-col resp-xs1 resp-s2 resp-m6 resp-ml6 resp-l12 resp-xl12 container-custompage custompage">
+                    <div class="resp-row resp-section ">
+                        <div class="resp-col resp-xs1 resp-s2 resp-m6 resp-ml6 resp-l12 resp-xl12 custom-html">
+                            <div class="resp-module">
+                                <div class="custom-html-wrapper">
+                                    <style type="text/css">
+                                        @charset "UTF-8";
+
+                                        .container-custompage {
+                                            background-color: #fff;
+                                        }
+
+                                        .section-header h1 {
+                                            line-height: 1.1
+                                        }
+
+                                        .covid-19--container {
+                                            margin-top: 30px !important;
+                                        }
+
+                                        .covid-19--container .covid-19--sections {
+                                            margin-left: 80px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .hotel-reward-link {
+                                            font-size: 13px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections.float-right {
+                                            margin-left: 30%;
+                                        }
+
+                                        .RTL .covid-19--container .covid-19--sections.float-right {
+                                            margin-right: 30%;
+                                        }
+
+                                        .RTL .covid-19--container .covid-19--sections {
+                                            margin-left: 0;
+                                            margin-right: 80px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-header {
+                                            margin-bottom: 32px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-header h1 {
+                                            margin-bottom: 8px;
+                                            margin-top: 0;
+                                            font-size: 24px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container {
+                                            margin-bottom: 32px;
+                                            color: #333;
+                                            font-size: 14px;
+                                            line-height: 18px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .section-title {
+                                            font-size: 20px;
+                                            font-weight: bold;
+                                            margin-bottom: 24px;
+                                            line-height: 1.4;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .section-title.secondary {
+                                            margin-top: 48px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .section-sub-title {
+                                            margin-bottom: 10px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container div {
+                                            margin-bottom: 24px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container ul li {
+                                            margin-bottom: 20px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container.contact-us .section-title {
+                                            line-height: 20px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container.contact-us .section-title:before {
+                                            font-family: "hcom-icons";
+                                            -webkit-font-smoothing: antialiased;
+                                            -moz-osx-font-smoothing: grayscale;
+                                            font-size: 20px;
+                                            content: "";
+                                            color: #d32f2f;
+                                            border: 2px solid #d32f2f;
+                                            width: 42px;
+                                            height: 42px;
+                                            border-radius: 50%;
+                                            display: inline-block;
+                                            line-height: 42px;
+                                            text-align: center;
+                                            margin-right: 10px;
+                                            float: left;
+                                        }
+
+                                        .RTL .covid-19--container .covid-19--sections .section-container.contact-us .section-title:before {
+                                            margin-right: 0;
+                                            margin-left: 10px;
+                                            float: right;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .list li {
+                                            margin-left: 15px;
+                                            margin-bottom: 24px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .disc-list li {
+                                            list-style: disc;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .upper-list li {
+                                            list-style: upper-latin;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .section-container .number-list li {
+                                            list-style: decimal;
+                                        }
+
+                                        .RTL .covid-19--container .covid-19--sections .section-container .list li {
+                                            margin-left: 0;
+                                            margin-right: 15px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .covid-19--intro {
+                                            font-size: 14px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .covid-19--intro h2 {
+                                            margin-bottom: 20px;
+                                            font-size: 20px;
+                                        }
+
+                                        .covid-19--container .covid-19--sections .covid-19--intro div {
+                                            margin-bottom: 48px;
+                                            line-height: 18px;
+                                        }
+
+                                        .covid-19--container .nav-bar {
+                                            border: 1px solid #e8e8e8;
+                                            border-radius: 4px;
+                                            font-size: 16px;
+                                            padding: 20px;
+                                            max-width: 265px;
+                                            margin-bottom: 48px;
+                                            position: sticky;
+                                            position: -webkit-sticky;
+                                            top: 30px;
+                                        }
+
+                                        .covid-19--container .nav-bar.static-position {
+                                            position: static;
+                                        }
+
+                                        .covid-19--container .nav-bar.fixed-position {
+                                            position: fixed;
+                                        }
+
+                                        .covid-19--container .nav-bar.lock-menu {
+                                            position: absolute;
+                                            top: auto;
+                                            bottom: 0;
+                                        }
+
+                                        .covid-19--container .nav-bar .nav-bar-title {
+                                            color: #333;
+                                            font-weight: bold;
+                                            margin-left: 12px;
+                                            margin-bottom: 26px;
+                                            font-size: 22px;
+                                        }
+
+                                        .covid-19--container .nav-bar ul li {
+                                            margin-left: 12px;
+                                            line-height: 1.25;
+                                        }
+
+                                        .covid-19--container .nav-bar ul li+li {
+                                            margin-top: 24px;
+                                        }
+
+                                        .covid-19--container .nav-bar ul li.active {
+                                            list-style: disc;
+                                        }
+
+                                        .covid-19--container .nav-bar ul li.active,
+                                        .covid-19--container .nav-bar ul li.active a {
+                                            color: #156bc1;
+                                        }
+
+                                        .RTL .covid-19--container .nav-bar ul li {
+                                            margin-left: 0;
+                                            margin-right: 15px;
+                                        }
+
+                                        .covid-19--container .nav-bar ul li a {
+                                            color: #333333;
+                                            font-size: 14px;
+                                            display: block;
+                                        }
+
+                                        .covid-19--container .hamburger-menu {
+                                            display: none;
+                                        }
+
+                                        .non-eu-covid,
+                                        .eu-covid {
+                                            display: none;
+                                        }
+
+                                        .menu-overlay {
+                                            visibility: hidden;
+                                        }
+
+                                        @media screen and (min-width: 960px) and (max-width: 1259px) {
+                                            .covid-19--container .covid-19--sections {
+                                                margin-left: 40px;
+                                            }
+
+                                            .covid-19--container .covid-19--sections.float-right {
+                                                margin-left: 32.33%;
+                                            }
+
+                                            .RTL .covid-19--container .covid-19--sections.float-right {
+                                                margin-right: 32.33%;
+                                            }
+
+                                            .RTL .covid-19--container .covid-19--sections {
+                                                margin-left: 0;
+                                                margin-right: 40px;
+                                            }
+                                        }
+
+                                        @media screen and (max-width: 959px) {
+                                            .custompage .resp-row {
+                                                padding-left: 0;
+                                                padding-right: 0;
+                                            }
+
+                                            .custompage .resp-row .custom-html .resp-module {
+                                                margin-left: 0 !important;
+                                                margin-right: 0 !important;
+                                                position: static;
+                                            }
+
+                                            .resp-row {
+                                                overflow: unset;
+                                            }
+
+                                            .resp-row .resp-module {
+                                                overflow: unset;
+                                            }
+
+                                            .covid-19--container {
+                                                margin-top: 0 !important;
+                                            }
+
+                                            .covid-19--container .covid-19--sections {
+                                                margin-left: 0;
+                                                margin-right: 0;
+                                            }
+
+                                            .RTL .covid-19--container .covid-19--sections {
+                                                margin-left: 0;
+                                                margin-right: 0;
+                                            }
+
+                                            .covid-19--container .covid-19--sections.float-right {
+                                                margin-left: 0;
+                                                margin-right: 0;
+                                            }
+
+                                            .covid-19--container .covid-19--sections .section-header {
+                                                padding: 16px;
+                                                margin-bottom: 0;
+                                            }
+
+                                            .covid-19--container .covid-19--sections .section-header .last-updated {
+                                                margin-bottom: 0;
+                                            }
+
+                                            .covid-19--container .covid-19--sections .section-container {
+                                                padding-left: 16px;
+                                                padding-right: 16px;
+                                            }
+
+                                            .covid-19--container .nav-bar {
+                                                display: none;
+                                            }
+
+                                            .covid-19--container .hamburger-menu {
+                                                width: 100%;
+                                                height: 60px;
+                                                background-color: #fff;
+                                                display: block;
+                                                margin-bottom: 24px;
+                                                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+                                                position: sticky;
+                                                position: -webkit-sticky;
+                                                top: 0;
+                                                z-index: 3;
+                                            }
+
+                                            .covid-19--container .hamburger-menu.not-visible {
+                                                background-color: #7e7e7e;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header {
+                                                color: #156bc1;
+                                                font-size: 20px;
+                                                font-weight: bold;
+                                                padding: 20px;
+                                                line-height: 20px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header label {
+                                                font-family: hcom-icons;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header label.hamburger-button:before {
+                                                font-family: "hcom-icons";
+                                                position: absolute;
+                                                display: inline-block;
+                                                content: "\e971";
+                                                top: 22px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header input {
+                                                display: none;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header input:checked~.menu-container {
+                                                transform: none;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header span {
+                                                margin-left: 30px;
+                                            }
+
+                                            .RTL .covid-19--container .hamburger-menu .menu-header span {
+                                                margin-left: 0;
+                                                margin-right: 30px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-title {
+                                                display: inline-block;
+                                                line-height: 14px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-title.selected {
+                                                color: #000;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container {
+                                                height: 100vh;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                width: 240px;
+                                                font-size: 14px;
+                                                background-color: #fff;
+                                                -webkit-font-smoothing: antialiased;
+                                                transform-origin: 0 0;
+                                                transform: translate(-100%, 0);
+                                                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+                                            }
+
+                                            .RTL .covid-19--container .hamburger-menu .menu-header .menu-container {
+                                                right: 0;
+                                                transform: translate(100%, 0);
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul li {
+                                                line-height: 1.25;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul li+li {
+                                                margin-top: 24px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul li.active {
+                                                list-style: disc;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul li.active,
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul li.active a {
+                                                color: #156bc1;
+                                            }
+
+                                            .RTL .covid-19--container .hamburger-menu .menu-header .menu-container ul li {
+                                                margin-left: 0;
+                                                margin-right: 15px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul li a {
+                                                color: #333333;
+                                                display: block;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container ul {
+                                                padding: 20px;
+                                                font-weight: normal;
+                                                background-color: #fff;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container .container-header {
+                                                color: #000;
+                                                font-size: 20px;
+                                                font-weight: bold;
+                                                border-bottom: 2px solid #ccc;
+                                                padding: 20px;
+                                            }
+
+                                            .covid-19--container .hamburger-menu .menu-header .menu-container .container-header .close-button {
+                                                float: right;
+                                                font-family: hcom-icons;
+                                                font-size: 14px;
+                                                font-weight: normal;
+                                                color: #7e7e7e;
+                                            }
+
+                                            .menu-overlay {
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                z-index: 2;
+                                                background-color: #000;
+                                                opacity: 0.5;
+                                            }
+
+                                            .menu-overlay.visible {
+                                                visibility: visible;
+                                            }
+                                        }
+
+                                        @media screen and (max-width: 749px) {
+                                            .menu-header {
+                                                line-height: 14px;
+                                            }
+
+                                            .menu-header label {
+                                                font-size: 14px;
+                                            }
+
+                                            .menu-header .menu-title {
+                                                font-size: 16px;
+                                            }
+
+                                            .menu-header .menu-title.selected {
+                                                font-size: 14px;
+                                            }
+
+                                            .section-title:before {
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                    </style>
+                                    <div class="covid-19--container resp-row" itemscope
+                                        itemtype="https://schema.org/FAQPage">
+                                        <div
+                                            class="nav-bar resp-col resp-xs1 resp-s2 resp-m6 resp-ml6 resp-l4 resp-xl4">
+                                            <div class="nav-bar-title">Chọn nội dung</div>
+                                            <ul>
+                                                <li><a href="#contact-details">Làm thế nào để liên hệ Hotels.com?</a>
+                                                </li>
+                                                <li><a href="#how-to-cancel-request-refund">Hủy đặt phòng như thế
+                                                        nào?</a></li>
+                                                <li><a href="#refund-processing-time">Khi nào tôi sẽ nhận hoàn tiền?</a>
+                                                </li>
+                                                <li><a href="#voucher-processing-time">Khi nào tôi sẽ nhận được
+                                                        voucher?</a></li>
+                                                <li><a href="#hotels-com-rewards-status">Trạng thái thành viên
+                                                        Hotels.com™ Rewards của tôi sẽ như thế nào trong tình hình
+                                                        này?</a></li>
+                                                <li><a href="#free-cancellation-rates">Tôi cần làm gì để tránh rắc rối
+                                                        khi đặt phòng cho chuyến đi trong tương lai?</a></li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="covid-19--sections resp-col resp-xs1 resp-s2 resp-m6 resp-ml6 resp-l8 resp-xl8">
+                                            <div class="section-header">
+                                                <h1>COVID-19 - Thông điệp quan trọng liên quan đến đặt phòng sắp tới của
+                                                    bạn</h1>
+                                            </div>
+                                            <div class="hamburger-menu">
+                                                <div class="menu-header"><label for="menu-button"
+                                                        class="hamburger-button"></label><input id="menu-button"
+                                                        type="checkbox" /><span class="menu-title">Chọn nội dung</span>
+                                                    <div class="menu-container">
+                                                        <div class="container-header">Chọn nội dung<label
+                                                                for="menu-button" class="close-button">&#xe951;</label>
+                                                        </div>
+                                                        <ul>
+                                                            <li><a href="#contact-details">Làm thế nào để liên hệ
+                                                                    Hotels.com?</a></li>
+                                                            <li><a href="#how-to-cancel-request-refund">Hủy đặt phòng
+                                                                    như thế nào?</a></li>
+                                                            <li><a href="#refund-processing-time">Khi nào tôi sẽ nhận
+                                                                    hoàn tiền?</a></li>
+                                                            <li><a href="#voucher-processing-time">Khi nào tôi sẽ nhận
+                                                                    được voucher?</a></li>
+                                                            <li><a href="#hotels-com-rewards-status">Trạng thái thành
+                                                                    viên Hotels.com™ Rewards của tôi sẽ như thế nào
+                                                                    trong tình hình này?</a></li>
+                                                            <li><a href="#free-cancellation-rates">Tôi cần làm gì để
+                                                                    tránh rắc rối khi đặt phòng cho chuyến đi trong
+                                                                    tương lai?</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-container">
+                                                <div>Cả ngành công nghiệp du lịch hiện đang bị ảnh hưởng bởi coronavirus
+                                                    (COVID-19). Chúng tôi hiện phải xử lý yêu cầu hỗ trợ từ khách trên
+                                                    khắp thế giới.</div>
+                                                <div>Vui lòng xem thông tin bên dưới để tìm hiểu thêm chi tiết.</div>
+                                                <div>Đây là những thông tin bạn cần biết:</div>
+                                                <div>
+                                                    <ul class="list disc-list">
+                                                        <li>Một số điểm đến đã bắt đầu nới lỏng giới hạn và thật tuyệt
+                                                            vời khi bạn lại có thể lên đường du lịch. Chúng tôi hiểu
+                                                            rằng bạn vẫn chưa thể đến một số địa điểm, nhưng tình hình
+                                                            tiếp tục thay đổi mỗi ngày. Vì thế, chúng tôi sẽ tiếp tục
+                                                            theo dõi sát sao để giúp bạn dễ dàng quản lý lịch trình của
+                                                            mình. </li>
+                                                        <li>Khi mọi việc đang dần quay lại trạng thái bình thường, chúng
+                                                            tôi sẽ không gửi email cập nhật về COVID-19 nếu ngày lưu trú
+                                                            trong đặt phòng của bạn bắt đầu sau ngày 01/07/2020. Nếu
+                                                            muốn thay đổi hoặc hủy đặt phòng của mình, hãy đến trang <a
+                                                                href="/account/bookingslist.html?intlid=COVID19_Booking_Information"
+                                                                rel="nofollow">‘Đặt phòng của bạn’</a>, chọn ‘Xem đặt
+                                                            phòng’.</li>
+                                                        <li>Chúng tôi vẫn đang tiếp tục làm việc để hỗ trợ khách có
+                                                            chuyến đi trong quá khứ và khách có kế hoạch lưu trú đang bị
+                                                            ảnh hưởng bởi COVID-19. Cảm ơn bạn đã kiên nhẫn.</li>
+                                                        <li>Nếu đặt phòng của bạn là đặt phòng có thể hoàn tiền, vui
+                                                            lòng truy cập <a class="customer-service-portal-link"
+                                                                href="https://vi.hotels.com/page/faqs-legacy/">trang
+                                                                Dịch vụ khách hàng</a> để thay đổi hoặc hủy.</li>
+                                                        <li>Nếu muốn thực hiện đặt phòng mới, bạn nên chọn phòng cho
+                                                            phép hủy miễn phí.</li>
+                                                    </ul>
+                                                </div>
+                                                <div>Cảm ơn bạn đã thông cảm. Đối với chúng tôi, an toàn của bạn trong
+                                                    thời gian này là điều quan trọng nhất. Toàn thể nhân viên Hotels.com
+                                                    rất cám ơn bạn đã sử dụng dịch vụ của chúng tôi.</div>
+                                            </div>
+                                            <div id="contact-details" class="section-container" itemscope
+                                                itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                                <div class="section-title" itemprop="name">Làm thế nào để liên hệ
+                                                    Hotels.com?</div>
+                                                <div itemscope itemprop="acceptedAnswer"
+                                                    itemtype="https://schema.org/Answer">
+                                                    <div itemprop="text">Đây là <a
+                                                            href="https://contact.hotels.com/?intlid=COVID19_Booking_Information"
+                                                            rel="nofollow">tất cả thông tin liên lạc</a> cần thiết.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="how-to-cancel-request-refund" class="section-container" itemscope
+                                                itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                                <div class="section-title" itemprop="name">Hủy đặt phòng như thế nào?
+                                                </div>
+                                                <div itemscope itemprop="acceptedAnswer"
+                                                    itemtype="https://schema.org/Answer">
+                                                    <div itemprop="text">
+                                                        <div>Bạn có thể xem, hủy hoặc quản lý đặt phòng trong <a
+                                                                href="/account/bookingslist.html?intlid=COVID19_Booking_Information"
+                                                                rel="nofollow">tài khoản của bạn</a>. Chọn đặt phòng bạn
+                                                            muốn thay đổi hoặc hủy và bấm "Hủy phòng" hoặc "Thay đổi đặt
+                                                            phòng".</div>
+                                                        <div>Nếu vì lý do nào đó bạn không thể thực hiện thao tác trên,
+                                                            vui lòng gửi <a href="/travel-alert-refunds"
+                                                                rel="nofollow">Mẫu yêu cầu hủy</a> và đính kèm mã xác
+                                                            nhận đặt phòng, email và số điện thoại bạn sử dụng khi đặt
+                                                            phòng. Chúng tôi sẽ xử lý yêu cầu sau khi bạn gửi mẫu yêu
+                                                            cầu hủy. Bạn sẽ nhận được email xác nhận khi mọi việc hoàn
+                                                            tất.</div>
+                                                        <div>Nếu có câu hỏi, vui lòng liên hệ với chúng tôi qua số
+                                                            120-32-103.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="refund-processing-time" class="section-container" itemscope
+                                                itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                                <div class="section-title" itemprop="name">Khi nào tôi sẽ nhận hoàn
+                                                    tiền?</div>
+                                                <div class="eu-covid-container" data-pos="HCOM_VN" data-locale="vi_VN"
+                                                    itemscope itemprop="acceptedAnswer"
+                                                    itemtype="https://schema.org/Answer">
+                                                    <div class="non-eu-covid" itemprop="text">Do ảnh hưởng của COVID-19,
+                                                        hầu hết khoản hoàn tiền chuyến bay, bao gồm nếu là một phần của
+                                                        sản phẩm trọn gói, sẽ được xử lý trong vòng 12 tuần. Một vài
+                                                        khoản hoàn tiền có thể mất nhiều thời gian hơn, tùy vào hãng
+                                                        hàng không. <br />Hoàn tiền đặt phòng khách sạn, thuê xe hoặc
+                                                        hoạt động, nếu là một phần của sản phẩm trọn gói, được xử lý
+                                                        trong thời hạn như quy trình thông thường của chúng tôi, tức
+                                                        trong vòng 24 giờ từ khi nhận được yêu cầu hủy. Vui lòng lưu ý
+                                                        việc khoản hoàn tiền được ghi nhận có vào tài khoản của bạn tùy
+                                                        thuộc vào ngân hàng hoặc đơn vị cung cấp dịch vụ thanh toán của
+                                                        bạn.</div>
+                                                    <div class="eu-covid" itemprop="text">Do ảnh hưởng của COVID-19, hầu
+                                                        hết khoản hoàn tiền chuyến bay sẽ được xuất trong vòng 12 tuần.
+                                                        Một vài khoản hoàn tiền có thể mất nhiều thời gian hơn, tùy vào
+                                                        hãng hàng không.<br />Hoàn tiền đặt phòng khách sạn, thuê xe
+                                                        hoặc hoạt động được xử lý trong thời hạn như quy trình thông
+                                                        thường của chúng tôi, tức trong vòng 24 giờ từ khi nhận được yêu
+                                                        cầu hủy. Vui lòng lưu ý việc khoản hoàn tiền được ghi nhận có
+                                                        vào tài khoản của bạn tùy thuộc vào ngân hàng hoặc đơn vị cung
+                                                        cấp dịch vụ thanh toán của bạn.</div>
+                                                </div>
+                                            </div>
+                                            <div id="voucher-processing-time" class="section-container" itemscope
+                                                itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                                <div class="section-title" itemprop="name">Khi nào tôi sẽ nhận được
+                                                    voucher?</div>
+                                                <div itemscope itemprop="acceptedAnswer"
+                                                    itemtype="https://schema.org/Answer">
+                                                    <div itemprop="text">Chúng tôi sẽ xuất voucher cho bạn trong vòng 2
+                                                        ngày.</div>
+                                                </div>
+                                            </div>
+                                            <div id="hotels-com-rewards-status" class="section-container" itemscope
+                                                itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                                <div class="section-title" itemprop="name">Trạng thái thành viên
+                                                    Hotels.com™ Rewards của tôi sẽ như thế nào trong tình hình này?
+                                                </div>
+                                                <div itemscope itemprop="acceptedAnswer"
+                                                    itemtype="https://schema.org/Answer">
+                                                    <div itemprop="text">
+                                                        <div> Hy vọng việc gia hạn này giúp bạn có thể linh động tận
+                                                            dụng tem đã tích lũy và đêm thưởng chưa kịp sử dụng. Nếu bạn
+                                                            có tem hoặc đêm thưởng* đã hoặc sẽ hết hạn từ 01/04/2020,
+                                                            chúng tôi sẽ gia hạn thời gian hết hạn này đến cuối tháng
+                                                            6/2021. Vui lòng lưu ý, hiện tại, tài khoản Hotels.com
+                                                            Rewards của bạn vẫn sẽ thể hiện ngày hết hạn gốc. </div>
+                                                        <div><a href="/hotel-rewards-pillar/hotelscomrewards.html"
+                                                                class="hotel-reward-link" rel="nofollow">Xem thêm thông
+                                                                tin về chương trình Hotels.com Rewards</a></div>
+                                                        <div>Chúng tôi hiểu thành viên Silver và Gold có thể thay đổi kế
+                                                            hoạch chuyến đi và việc này ảnh hưởng đến việc gia hạn bậc
+                                                            thành viên trong năm tiếp theo. Vì thế, nếu ngày gia hạn bậc
+                                                            thành viên nằm trong giai đoạn từ 01/02/2020 đến 31/01/2021,
+                                                            chúng tôi sẽ gia hạn bậc thành viên của bạn thêm 1 năm tiếp
+                                                            theo. Và bạn có thể giảm thêm được một mối bận tâm. Kiểm tra
+                                                            trạng thái thành viên</div>
+                                                        <div><a href="/account/hotelscomrewards.html" rel="nofollow">tại
+                                                                đây</a>.</div>*
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="free-cancellation-rates" class="section-container" itemscope
+                                                itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                                <div class="section-title" itemprop="name">Tôi cần làm gì để tránh rắc
+                                                    rối khi đặt phòng cho chuyến đi trong tương lai?</div>
+                                                <div itemscope itemprop="acceptedAnswer"
+                                                    itemtype="https://schema.org/Answer">
+                                                    <div itemprop="text">Nhằm đảm bảo cho một kế hoạch linh động, bạn
+                                                        nên đặt giá có thể hoàn tiền (nhớ kiểm tra ký hiệu trên trang)
+                                                        để có thay đổi đặt phòng nếu cần.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="menu-overlay"></div>
+                                    <script type="text/javascript">
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            'use strict';
+
+                                            (function () {
+                                                'use strict';
+
+                                                var NAV_BAR_WIDGET_DEFAULTS = {
+                                                    listItemSelector: 'li',
+                                                    listItemActiveClass: 'active'
+                                                };
+
+                                                var HAMBURGER_MENU_WIDGET_DEFAULTS = {
+                                                    listItemAnchorSelector: 'li a',
+                                                    listTitleSelector: '.menu-title',
+                                                    menuContainerSelector: '.menu-container',
+                                                    menuOverlaySelector: '.menu-overlay'
+                                                };
+
+                                                var POSITION_STICKY_WIDGET_DEFAULTS = {
+                                                    floatRightClass: 'float-right',
+                                                    privacySectionsSelector: '.privacy-sections',
+                                                    positionFixedClass: 'fixed-position',
+                                                    positionStaticClass: 'static-position',
+                                                    positionLockedClass: 'lock-menu'
+                                                };
+
+                                                var TopicMap = {
+                                                    '#contact-details': 'Contact Details',
+                                                    '#how-to-cancel-request-refund': 'How To Cancel Request Refund',
+                                                    '#refund-processing-time': 'Refund Processing Time',
+                                                    '#voucher-processing-time': 'Voucher Processing Time',
+                                                    '#hotels-com-rewards-status': 'Hotels.com Rewards Status',
+                                                    '#free-cancellation-rates': 'free Cancellation Rates'
+                                                };
+
+                                                /**
+                                                 * Nav Bar widget
+                                                 * @class navBar
+                                                 * @constructor
+                                                 * @extends dio.Widget
+                                                 * @namespace dio.widget
+                                                 * @module widgets
+                                                 * @param {Object} config Object with configuration property name/value pairs
+                                                 *
+                                                 * @author Janos Fekete
+                                                 */
+                                                dio.addWidget('navBar', dio.Widget, {
+                                                    /**
+                                                     * @method bindUI
+                                                     */
+                                                    bindUI: function bindUI() {
+                                                        var _this = this;
+
+                                                        var $listItems = this.find(this.conf.listItemSelector);
+
+                                                        this.event($listItems, 'on', 'click', function (event) {
+                                                            var $listItem = $(event.currentTarget);
+
+                                                            $listItem.siblings('.' + _this.conf.listItemActiveClass).removeClass(_this.conf.listItemActiveClass);
+                                                            $listItem.addClass(_this.conf.listItemActiveClass);
+                                                        });
+                                                    }
+                                                }, NAV_BAR_WIDGET_DEFAULTS);
+
+                                                /**
+                                                 * Hamburger Menu widget
+                                                 * @class hamburgerMenu
+                                                 * @constructor
+                                                 * @extends dio.Widget
+                                                 * @namespace dio.widget
+                                                 * @module widgets
+                                                 * @param {Object} config Object with configuration property name/value pairs
+                                                 *
+                                                 * @author Janos Fekete
+                                                 */
+                                                dio.addWidget('hamburgerMenu', dio.Widget, {
+                                                    /**
+                                                     * @method init
+                                                     */
+                                                    init: function init() {
+                                                        this.selectedListItem = this.find(this.conf.listItemAnchorSelector);
+                                                        this.menuTitle = this.find(this.conf.listTitleSelector);
+                                                        this.menuContainer = this.find(this.conf.menuContainerSelector);
+                                                        this.menuOverlay = $(this.conf.menuOverlaySelector);
+                                                    },
+
+
+                                                    /**
+                                                     * @method bindUI
+                                                     */
+                                                    bindUI: function bindUI() {
+                                                        var _this2 = this;
+
+                                                        this.event(this.selectedListItem, 'on', 'click', function (event) {
+                                                            _this2.menuTitle.text(event.target.text).addClass('selected');
+                                                        });
+
+                                                        this.event(this.menuContainer, 'on', 'transitionend', function () {
+                                                            _this2.menuOverlay.toggleClass('visible');
+                                                            _this2.cont.toggleClass('not-visible');
+                                                        });
+                                                    }
+                                                }, HAMBURGER_MENU_WIDGET_DEFAULTS);
+
+                                                /**
+                                                 * Position Sticky Fallback widget
+                                                 * @class positionStickyFallback
+                                                 * @constructor
+                                                 * @extends dio.Widget
+                                                 * @namespace dio.widget
+                                                 * @module widgets
+                                                 * @param {Object} config Object with configuration property name/value pairs
+                                                 *
+                                                 * @author Janos Fekete
+                                                 */
+                                                dio.addWidget('positionStickyFallback', dio.Widget, {
+                                                    /**
+                                                     * @method init
+                                                     */
+                                                    init: function init() {
+                                                        this.$window = $(window);
+                                                        this.isStickySupported = 'CSS' in window && CSS.supports('position', 'sticky');
+                                                        this.privacySections = $(this.conf.privacySectionsSelector);
+                                                    },
+
+
+                                                    /**
+                                                     * @method paintUI
+                                                     */
+                                                    paintUI: function paintUI() {
+                                                        !this.isStickySupported && this.cont.addClass(this.conf.positionStaticClass);
+                                                    },
+
+
+                                                    /**
+                                                     * @method bindUI
+                                                     */
+                                                    bindUI: function bindUI() {
+                                                        !this.isStickySupported && this.event(this.$window, 'on', 'scroll', this.lockMenuPosition);
+                                                    },
+
+
+                                                    /**
+                                                     * @method lockMenuPosition
+                                                     * lock menu position
+                                                     */
+                                                    lockMenuPosition: function lockMenuPosition() {
+                                                        var privacySectionsTop = this.privacySections.offset().top,
+                                                            privacySectionsHeight = this.privacySections.height(),
+                                                            menuHeight = this.cont.height(),
+                                                            windowScrollTop = $(window).scrollTop(),
+                                                            isMenuAtBottom = menuHeight > privacySectionsTop + privacySectionsHeight - windowScrollTop,
+                                                            isMenuInMiddle = privacySectionsTop < windowScrollTop;
+
+                                                        if (isMenuAtBottom) {
+                                                            this.cont.addClass(this.conf.positionLockedClass).removeClass(this.conf.positionFixedClass);
+                                                        } else if (isMenuInMiddle) {
+                                                            this.cont.siblings().addClass(this.conf.floatRightClass);
+                                                            this.cont.addClass(this.conf.positionFixedClass).removeClass(this.conf.positionLockedClass);
+                                                        } else {
+                                                            this.cont.siblings().removeClass(this.conf.floatRightClass);
+                                                            this.cont.removeClass(this.conf.positionFixedClass + ' ' + this.conf.positionLockedClass);
+                                                        }
+                                                    }
+                                                }, POSITION_STICKY_WIDGET_DEFAULTS);
+
+                                                var trackingPrefix = 'COVID-19_Booking_Information';
+                                                // Tracking Event 2: Interaction with topics in the menu
+                                                $('.hamburger-button').one('click', function () {
+                                                    dio.sitecatalyst.sendPartialReport({}, '', trackingPrefix + ' :: Topic Burger Menu Click');
+                                                });
+
+                                                // Tracking Event 3: Hyperlinks within the text
+                                                $('.menu-container li a').one('click', function (event) {
+                                                    dio.sitecatalyst.sendPartialReport({}, '', trackingPrefix + ' :: Topic Click :: ' + TopicMap[event.target.getAttribute("href")]);
+                                                });
+
+                                                // Tracking Event 3: Hyperlinks within the text
+                                                $('.nav-bar li a').one('click', function (event) {
+                                                    dio.sitecatalyst.sendPartialReport({}, '', trackingPrefix + ' :: Topic Click :: ' + TopicMap[event.target.getAttribute("href")]);
+                                                });
+
+                                                // Tracking Event 6: User clicks on links that take them to a section down the page
+                                                $('.see_how_to_cancel a').one('click', function (event) {
+                                                    var locationOfClick = event.target.parentElement.getAttribute('data-section-name');
+                                                    dio.sitecatalyst.sendPartialReport({ eVar33: locationOfClick }, '', 'see how to cancel - clicked');
+                                                });
+
+                                                var selectedPosLocale = $(".eu-covid-container").data('pos') + $(".eu-covid-container").data('locale');
+                                                var euPosArray = ["HCOM_ATde_AT",
+                                                    "HCOM_BEde_BE",
+                                                    "HCOM_BEnl_BE",
+                                                    "HCOM_BEfr_BE",
+                                                    "HCOM_HRhr_HR",
+                                                    "HCOM_CZcs_CZ",
+                                                    "HCOM_DKda_DK",
+                                                    "HCOM_EEet_EE",
+                                                    "HCOM_FIfi_FI",
+                                                    "HCOM_FRfr_FR",
+                                                    "HCOM_DEde_DE",
+                                                    "HCOM_GRel_GR",
+                                                    "HCOM_HUhu_HU",
+                                                    "HCOM_IEen_IE",
+                                                    "HCOM_ITit_IT",
+                                                    "HCOM_LVlv_LV",
+                                                    "HCOM_LTlt_LT",
+                                                    "HCOM_NLnl_NL",
+                                                    "HCOM_PLpl_PL",
+                                                    "HCOM_PTpt_PT",
+                                                    "HCOM_SKsk_SK",
+                                                    "HCOM_ESes_ES",
+                                                    "HCOM_SEsv_SE",
+                                                    "HCOM_UKen_GB",
+                                                    "HCOM_ATde_AT",
+                                                    "HCOM_BEde_BE",
+                                                    "HCOM_BEnl_BE",
+                                                    "HCOM_BEfr_BE",
+                                                ];
+                                                var isEUPos = euPosArray.indexOf(selectedPosLocale) >= 0;
+
+                                                if (isEUPos) {
+                                                    $('.eu-covid').show();
+                                                } else {
+                                                    $('.non-eu-covid').show();
+                                                }
+
+                                                dio.util.lpa.widgetComposer.addWidget({
+                                                    type: 'navBar',
+                                                    selector: '.nav-bar, .hamburger-menu'
+                                                }).addWidget({
+                                                    type: 'positionStickyFallback',
+                                                    selector: '.nav-bar'
+                                                }).addWidget({
+                                                    type: 'hamburgerMenu',
+                                                    selector: '.hamburger-menu'
+                                                });
+                                            })();
+
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="resp-footer" role="contentinfo">
+        <div class="ftr-drive-direct">
+            <div class="resp-row">
+                <h2>Chọn một trong các hình thức sau để mở khóa Giá Bí mật và thanh toán giá thấp hơn tại một số nơi lưu
+                    trú.</h2><a href="/newsletter/subscribe.html" id="ftr-newsletter"
+                    class="resp-col dd-module footer-newsletter"><span class="icon-cont"><span
+                            class="icon"></span></span>
+                    <h3>Email</h3>
+                    <p>Đăng ký nhận thông tin khuyến mãi mới nhất của chúng tôi</p>
+                </a><a
+                    href="https://hotels.tlnk.io/serve?action=click&amp;publisher_id=170552&amp;site_id=100374&amp;site_id_android=100380&amp;site_id_web=136242&amp;my_publisher=brand.site.footer&amp;invoke_url=hotelsapp%3A%2F%2Fwww.hotels.com%2F%3F%26rffrid%3Dbrand.site.footer&amp;rffrid=brand.site.footer&amp;intlid=web_footer"
+                    id="ftr-hcom-app" class="resp-col dd-module footer-hcom-app"><span class="icon-cont"><span
+                            class="icon"></span></span>
+                    <h3>App Hotels.com</h3>
+                    <p>Tải app và đặt phòng mọi lúc, mọi nơi</p>
+                </a><a href="/hotel-rewards-pillar/hotelscomrewards.html" id="ftr-hcom-rewards"
+                    class="resp-col dd-module footer-hcom-rewards"><span class="icon-cont"><span
+                            class="icon"></span></span>
+                    <h3>Hotels.com™ Rewards</h3><img class="hr-logo" alt="Hotels.com™ Rewards"
+                        src="https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/hcomrewards/logos/rewards-logo-purple-no-moon-vi_VN.png"
+                        height="16" />
+                    <p>Tham gia ngay! Tích lũy 10 tem, nhận 1 đêm thưởng*</p>
+                </a>
+            </div>
+        </div>
+        <div class="resp-row footer-group">
+            <div class="section-links">
+                <div class="footer-nav-list">
+                    <ul>
+                        <li class="widget-toggle nav-item-top-dest">
+                            <h2 class="widget-toggle-btn">Điểm đến hàng đầu</h2>
+                            <ul class="widget-toggle-bd">
+                                <li><a href="https://vi.hotels.com/de1633619/khach-san-thanh-pho-ho-chi-minh-viet-nam/"
+                                        title="Khách sạn tại Thành phố Hồ Chí Minh" rel="follow">Khách sạn tại Thành phố
+                                        Hồ Chí Minh</a></li>
+                                <li><a href="https://vi.hotels.com/de1634382/khach-san-ha-noi-viet-nam/"
+                                        title="Khách sạn tại Hà Nội" rel="follow">Khách sạn tại Hà Nội</a></li>
+                                <li><a href="https://vi.hotels.com/de1785921/khach-san-a-nang-viet-nam/"
+                                        title="Khách sạn tại Đà Nẵng" rel="follow">Khách sạn tại Đà Nẵng</a></li>
+                                <li><a href="https://vi.hotels.com/de1567425/khach-san-a-lat-viet-nam/"
+                                        title="Khách sạn tại Đà Lạt" rel="follow">Khách sạn tại Đà Lạt</a></li>
+                                <li><a href="https://vi.hotels.com/de1581241/khach-san-phan-thiet-viet-nam/"
+                                        title="Khách sạn tại Phan Thiết" rel="follow">Khách sạn tại Phan Thiết</a>
+                                </li>
+                                <li><a href="https://vi.hotels.com/de1578954/khach-san-nha-trang-viet-nam/"
+                                        title="Khách sạn tại Nha Trang" rel="follow">Khách sạn tại Nha Trang</a></li>
+                                <li><a href="https://vi.hotels.com/de1634653/khach-san-hoi-an-viet-nam/"
+                                        title="Khách sạn tại Hội An" rel="follow">Khách sạn tại Hội An</a></li>
+                                <li><a href="https://vi.hotels.com/de1581970/khach-san-vung-tau-viet-nam/"
+                                        title="Khách sạn tại Vũng Tàu" rel="follow">Khách sạn tại Vũng Tàu</a></li>
+                                <li><a href="https://vi.hotels.com/de1573031/khach-san-phu-quoc-viet-nam/"
+                                        title="Khách sạn tại Phú Quốc" rel="follow">Khách sạn tại Phú Quốc</a></li>
+                                <li><a href="https://vi.hotels.com/de1655844/khach-san-singapore-singapore/"
+                                        title="Khách sạn tại Singapore" rel="follow">Khách sạn tại Singapore</a></li>
+                                <li><a href="https://vi.hotels.com/de1313946/khach-san-bangkok-thai-lan/"
+                                        title="Khách sạn tại Bangkok" rel="follow">Khách sạn tại Bangkok</a></li>
+                                <li><a href="https://vi.hotels.com/de1641969/khach-san-ha-long-viet-nam/"
+                                        title="Khách sạn tại Hạ Long" rel="follow">Khách sạn tại Hạ Long</a></li>
+                                <li><a href="https://vi.hotels.com/de1571307/khach-san-quy-nhon-viet-nam/"
+                                        title="Khách sạn tại Quy Nhơn" rel="follow">Khách sạn tại Quy Nhơn</a></li>
+                                <li><a href="https://vi.hotels.com/de1641979/khach-san-sapa-viet-nam/"
+                                        title="Khách sạn tại Sa Pa" rel="follow">Khách sạn tại Sa Pa</a></li>
+                                <li><a href="https://vi.hotels.com/de1562503/khach-san-xuyen-moc-viet-nam/"
+                                        title="Khách sạn tại Xuyên Mộc" rel="follow">Khách sạn tại Xuyên Mộc</a></li>
+                                <li><a href="https://vi.hotels.com/de1582675/khach-san-hue-viet-nam/"
+                                        title="Khách sạn tại Huế" rel="follow">Khách sạn tại Huế</a></li>
+                                <li><a href="https://vi.hotels.com/de759818/khach-san-seoul-han-quoc/"
+                                        title="Khách sạn tại Seoul" rel="follow">Khách sạn tại Seoul</a></li>
+                                <li><a href="https://vi.hotels.com/de1559937/khach-san-sam-son-viet-nam/"
+                                        title="Khách sạn tại Sầm Sơn" rel="follow">Khách sạn tại Sầm Sơn</a></li>
+                                <li><a href="https://vi.hotels.com/de1580377/khach-san-can-tho-viet-nam/"
+                                        title="Khách sạn tại Cần Thơ" rel="follow">Khách sạn tại Cần Thơ</a></li>
+                                <li><a href="https://vi.hotels.com/de1641968/khach-san-hai-phong-viet-nam/"
+                                        title="Khách sạn tại Hải Phòng" rel="follow">Khách sạn tại Hải Phòng</a></li>
+                                <li><a href="https://vi.hotels.com/de726784/khach-san-tokyo-nhat-ban/"
+                                        title="Khách sạn tại Tokyo" rel="follow">Khách sạn tại Tokyo</a></li>
+                                <li><a href="https://vi.hotels.com/de504261/khach-san-paris-phap/"
+                                        title="Khách sạn tại Paris" rel="follow">Khách sạn tại Paris</a></li>
+                                <li><a href="https://vi.hotels.com/de1560903/khach-san-la-gi-viet-nam/"
+                                        title="Khách sạn tại La Gi" rel="follow">Khách sạn tại La Gi</a></li>
+                                <li><a href="https://vi.hotels.com/de1366745/khach-san-ai-bac-ai-loan/"
+                                        title="Khách sạn tại Đài Bắc" rel="follow">Khách sạn tại Đài Bắc</a></li>
+                            </ul>
+                        </li>
+                        <li class="widget-toggle nav-item-top-countries">
+                            <h2 class="widget-toggle-btn">Quốc gia &amp; vùng nổi bật</h2>
+                            <ul class="widget-toggle-bd">
+                                <li><a href="https://vi.hotels.com/co10233154/khach-san-tai-singapore/"
+                                        title="Khách sạn ở Singapore" rel="follow">Khách sạn ở Singapore</a></li>
+                                <li><a href="https://vi.hotels.com/co10233105/khach-san-tai-maldives/"
+                                        title="Khách sạn ở Maldives" rel="follow">Khách sạn ở Maldives</a></li>
+                                <li><a href="https://vi.hotels.com/co10233187/khach-san-tai-viet-nam/"
+                                        title="Khách sạn ở Việt Nam" rel="follow">Khách sạn ở Việt Nam</a></li>
+                                <li><a href="https://vi.hotels.com/co10233107/khach-san-tai-malta/"
+                                        title="Khách sạn ở Malta" rel="follow">Khách sạn ở Malta</a></li>
+                                <li><a href="https://vi.hotels.com/co10233073/khach-san-tai-ac-khu-hanh-chinh-hong-kong/"
+                                        title="Khách sạn ở Đặc khu Hành chính Hồng Kông" rel="follow">Khách sạn ở Đặc
+                                        khu Hành chính Hồng Kông</a></li>
+                                <li><a href="https://vi.hotels.com/co10233167/khach-san-tai-thuy-si/"
+                                        title="Khách sạn ở Thụy Sĩ" rel="follow">Khách sạn ở Thụy Sĩ</a></li>
+                                <li><a href="https://vi.hotels.com/re1687236/khach-san-tai-con-ao-viet-nam/"
+                                        title="Khách sạn tại Côn Đảo" rel="follow">Khách sạn tại Côn Đảo</a></li>
+                                <li><a href="https://vi.hotels.com/re1572865/khach-san-tai-ao-quan-lan-viet-nam/"
+                                        title="Khách sạn tại Đảo Quan Lạn" rel="follow">Khách sạn tại Đảo Quan Lạn</a>
+                                </li>
+                                <li><a href="https://vi.hotels.com/re1640036/khach-san-tai-vinh-ha-long-viet-nam/"
+                                        title="Khách sạn tại Vịnh Hạ Long" rel="follow">Khách sạn tại Vịnh Hạ Long</a>
+                                </li>
+                                <li><a href="https://vi.hotels.com/re11108147/khach-san-tai-quang-ninh-viet-nam/"
+                                        title="Khách sạn tại Quảng Ninh" rel="follow">Khách sạn tại Quảng Ninh</a></li>
+                                <li><a href="https://vi.hotels.com/re1761627/khach-san-tai-khu-trung-tam-singapore-singapore/"
+                                        title="Khách sạn tại Khu Trung tâm Singapore" rel="follow">Khách sạn tại Khu
+                                        Trung tâm Singapore</a></li>
+                                <li><a href="https://vi.hotels.com/re1644457/khach-san-tai-ao-jeju-han-quoc/"
+                                        title="Khách sạn tại Đảo Jeju" rel="follow">Khách sạn tại Đảo Jeju</a></li>
+                            </ul>
+                        </li>
+                        <li class="widget-toggle nav-item-cust-service">
+                            <h2 class="widget-toggle-btn">Hỗ trợ &amp; Câu hỏi thường gặp</h2>
+                            <ul class="widget-toggle-bd ">
+                                <li><a href="/account/bookingslist.html" id="ftr-customer-bookings" rel="nofollow"
+                                        target="_blank">Đặt phòng của bạn</a></li>
+                                <li><a href="/customer_care/index.html" id="ftr-faqs" rel="nofollow" target="_blank">Câu
+                                        hỏi thường gặp</a></li>
+                                <li><a href="/customer_care/index.html" id="ftr-contact" rel="nofollow"
+                                        target="_blank">Liên hệ với chúng tôi</a></li>
+                                <li><a href="mailto:userexperience@hotels.com?subject=Site%20feedback:%20OTHER|vi_VN|HCOM_VN|vi.hotels.com"
+                                        id="ftr-feedback" rel="nofollow" target="_blank">Phản hồi về trang web</a></li>
+                                <li><a href="/account/bookingslist.html?section=COMPLETED" id="ftr-review"
+                                        rel="nofollow" target="_blank">Nhận xét nơi lưu trú</a></li>
+                            </ul>
+                        </li>
+                        <li class="widget-toggle nav-item-affiliates">
+                            <h2 class="widget-toggle-btn">Dành cho nhà cung cấp, chi nhánh và giới truyền thông</h2>
+                            <ul class="widget-toggle-bd ">
+                                <li><a href="/page/affiliate-with-us/" id="ftr-sam-affiliate-with-us" rel="nofollow"
+                                        target="_blank">Liên kết với chúng tôi</a></li>
+                                <li><a href="https://advertising.expedia.com/" id="ftr-sam-promote-with-us"
+                                        rel="nofollow noopener" target="_blank">Quảng bá với chúng tôi</a></li>
+                                <li><a href="https://travelagencies.hotels.com/?lang=en" id="ftr-sam-travel-agents"
+                                        rel="nofollow" target="_blank">Đại lý lữ hành</a></li>
+                            </ul>
+                        </li>
+                        <li class="widget-toggle nav-item-terms-and-privacy">
+                            <h2 class="widget-toggle-btn">Điều khoản người dùng &amp; Bảo mật</h2>
+                            <ul class="widget-toggle-bd ">
+                                <li><a href="/customer_care/terms_conditions.html" id="ftr-terms-and-conditions"
+                                        rel="nofollow" target="_blank">Điều khoản &amp; Điều kiện</a></li>
+                                <li><a href="/customer_care/privacy.html" id="ftr-privacy" rel="nofollow"
+                                        target="_blank">Bảo mật</a></li>
+                                <li><a href="/customer_care/cookie_policy.html" id="ftr-cookie-policy" rel="nofollow"
+                                        target="_blank">Cookies</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2 class="no-sublinks"><a
+                                    href="mailto:userexperience@hotels.com?subject=Site%20feedback:%20OTHER|vi_VN|HCOM_VN|vi.hotels.com"
+                                    id="ftr-feedback-main" rel="nofollow">Phản hồi về trang web</a></h2>
+                        </li>
+                        <li class="nav-item-about-us">
+                            <h2 class="no-sublinks"><a href="/customer_care/about_us.html" id="ftr-about-us"
+                                    rel="nofollow" target="_blank">Thông tin về chúng tôi</a></h2>
+                        </li>
+                        <li class="nav-item-add-hotel">
+                            <h2 class="no-sublinks"><a
+                                    href="https://welcome.expediagroup.com/vi/how-to-list-your-property-on-hotels?utm_medium=referral&amp;utm_content=footer-link&amp;utm_source=HCOM_VN-vi_VN&amp;utm_campaign=OTHER"
+                                    id="ftr-add-hotel" rel="nofollow noopener" target="_blank">Đăng thông tin nơi lưu
+                                    trú của bạn</a></h2>
+                        </li>
+                        <li class="nav-item-jobs">
+                            <h2 class="no-sublinks"><a
+                                    href="https://lifeatexpediagroup.com/brands?utm_source=hotels&amp;utm_medium=homepage#brands-hotels"
+                                    id="ftr-jobs" rel="nofollow noopener" target="_blank">Nghề nghiệp</a></h2>
+                        </li>
+                    </ul>
+                    <ul class="seo-links">
+                        <li><a href="/alltop50cities/" target="_blank">50 thành phố hàng đầu</a></li>
+                        <li><a href="/allcountries/" target="_blank">Mọi quốc gia</a></li>
+                        <li><a href="/site-index/" target="_blank">Chỉ mục trang web</a></li>
+                    </ul>
+                </div>
+                <div id="copyright" class="copyright"><span class="expediagroup-logo" aria-label="Expedia Group Logo"
+                        role="img"></span>
+                    <p>*Một số khách sạn yêu cầu hủy hơn 24 giờ trước ngày nhận phòng. Xem thêm chi tiết trên trang.</p>
+                    <p class="rewards-terms-and-conditions">*Giá trị 1 đêm thưởng bằng giá trung bình của 10 tem bạn
+                        tích lũy. *Không bao gồm thuế và phí. Thu phí đổi thưởng 80.000 ₫ trên mỗi đêm bạn đổi. Miễn phí
+                        khi đổi thưởng trên app của chúng tôi. Có thể áp dụng ngoại lệ.<a
+                            href="/customer_care/terms_conditions.html" class="footer-welcome-rewards ph-ant"
+                            id="ftr-welcome-rewards" rel="nofollow" target="_blank">Xem điều khoản và điều kiện.</a></p>
+                    <p>© 2021 Hotels.com là công ty thuộc Expedia Group. Mọi quyền được bảo lưu.</p>
+                    <p>Hotels.com và logo Hotels.com là thương hiệu hoặc thương hiệu đã đăng ký bảo hộ của Hotels.com,
+                        LP tại Mỹ và/hoặc các quốc gia khác. Mọi thương hiệu khác thuộc quyền sở hữu của các chủ sở hữu
+                        tương ứng.</p>
+                </div>
+            </div>
+            <div class="section-logos">
+                <div class="footer-logos-and-verisign">
+                    <ul class="footer-logos"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>var hcom = window.hcom || {}; window.hcom.locale = { "rules": { "OMNITURE_S_ACCOUNT": "hotelsallprod", "OMNITURE_S_LNK_INT_FLTR": "javascript:,hotels.com,hoteis.com,hoteles.com,hotels.cn", "OMNITURE_S_SURVEY_ACCOUNT": "hotelsallprod" } };</script>
+    <script>var hcomi18nData = { "closeOverlay": "Đóng màn hình", "globalsite.page.heading.title": "Trang web toàn cầu", "header.selector.title_currencies": "Chọn đơn vị tiền tệ:", "header.accessibility.skip_header": "Đi đến nội dung chính.", "sica.form.label.email_address": "Địa chỉ email", "sica.form.error.email_address": "Vui lòng nhập địa chỉ email của bạn", "sica.form.error.email_address.check": "Vui lòng kiểm tra địa chỉ email", "sica.form.error.email_address.at_symbol": "Vui lòng nhập ký hiệu @ trong địa chỉ email", "newsletter.form.error.invalid_email": "Rất tiếc, chúng tôi không thể gửi bản tin đến địa chỉ email này. Vui lòng nhập một địa chỉ khác", "newsletter.form.error.technical": "Vì trục trặc kỹ thuật, chúng tôi không thể đăng ký cho bạn. Vui lòng thử lại, hoặc liên hệ với chúng tôi", "newsletter.form.title": "Hưởng giá thấp hơn nữa", "newsletter.form.description.odyssey": "Đăng ký nhận thông tin Giá Bí mật qua email để tiết kiệm hơn tại một số nơi lưu trú.", "newsletter.form.consent": "Với việc nhập địa chỉ email, bạn đồng ý nhận những thông tin ưu đãi tuyệt vời và thông báo về các chương trình khuyến mãi qua email. Bạn có thể hủy đăng ký bất kỳ thời điểm nào.", "newsletter.form.legal_section": "Với việc tiếp tục, bạn đồng ý {0}Điều khoản \u0026 Điều kiện{1} và {2}Chính sách Bảo mật{3} của chúng tôi.", "newsletter.form.button.label": "Mở khóa Giá Bí mật ngay", "newsletter.form.signin": "Đã có tài khoản? {0}Đăng nhập{1} để mở khóa Giá Bí mật", "newsletter.form.download": "{0}Tải app của chúng tôi{1} để truy xuất ngay Giá Bí mật", "newsletter.form.download_and_signin": "Đã có tài khoản? {0}Đăng nhập{1} để mở khóa Giá Bí mật {2}hoặc{3} {4}Tải app của chúng tôi{5} để truy xuất ngay", "newsletter.confirmation.title.odyssey": "Hưởng giá thấp hơn nữa", "newsletter.confirmation.description.odyssey": "Bạn nhận được ưu đãi Giá Bí mật! Chỉ cần tìm {0}‘Giá Bí mật của bạn’{1} để thanh toán giá thấp hơn tại một số khách sạn.", "newsletter.confirmation.price_notifier": "Giá Bí mật của bạn", "newsletter.confirmation.button_label": "OK", "newsletter.form.cancel.label": "Không cần, cám ơn. Tôi muốn thanh toán giá đầy đủ", "newsletter.generic.common.title": "Mở khóa Giá Bí mật và nhận nhiều ưu đãi tuyệt vời", "newsletter.generic.form.intro.odyssey": "Đăng ký nhận email của chúng tôi để tiết kiệm nhiều hơn với Giá Bí mật", "newsletter.generic.form.legal": "Với việc tiếp tục, bạn đồng ý {0}Điều khoản \u0026 Điều kiện{1} và {2}Chính sách Bảo mật{3} của chúng tôi. Bạn có thể hủy đăng ký bất kỳ thời điểm nào.", "newsletter.generic.form.unlock_button": "Mở khóa ngay", "newsletter.generic.form.benefits.heading": "Quyền lợi của bạn:", "newsletter.generic.form.benefits.available_properties": "Tiết kiệm ngay với Giá Bí mật", "newsletter.generic.form.benefits.coupons": "Nhận coupon giảm giá đến thẳng hộp thư của mình", "newsletter.generic.confirmation.headline": "Chúc mừng! ", "newsletter.generic.confirmation.description.unlocked": "Bạn vừa mở khóa Giá Bí mật.", "newsletter.generic.confirmation.description.look_out": "Hãy tìm ký hiệu ‘Giá Bí mật của bạn’ để thanh toán giá thấp hơn tại một số khách sạn.", "newsletter.generic.confirmation.outro": "Kiểm tra hộp thư thường xuyên để đón chờ ưu đãi mới nhất của chúng tôi và tiết kiệm nhiều hơn.", "newsletter.generic.confirmation.close_button": "Đóng", "header.control.back_to_home.brand": "Quay lại trang chủ {0}", "brand.hotelscomrewards.name": "Hotels.com™ Rewards", "newsletter.ng.confirmation.title": "Bạn vừa mở khóa Giá Bí mật", "newsletter.ng.confirmation.description": "Bạn có thể hưởng ngay giá này. Chỉ cần tìm ký hiệu {0}‘Giá Bí mật của bạn’{1} tại một số khách sạn.", "newsletter.ng.confirmation.button_label": "Hiểu rồi!" }; var hcomClientData = { "common.template.path": "https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/", "page.pageName": "CustomPage", "gdpr.callCcaOnInit": "false", "gdpr.consentGiven": "true", "userPrivacyPreferences.dnsmpi": "opt-in", "posCurrencyEndpoint": "https://apihotels.net/pce/graphql", "currency": "VND", "brandName": "Hotels.com", "common.locale": "vi_VN", "common.channel": "WEB_DESKTOP", "pos": "HCOM_VN", "common.assetsBaseUrl": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598", "newsletter.dd.templates.form": "hcom.templates.modules.ddnewsletter", "newsletter.dd.templates.confirmation": "hcom.templates.modules.ddnewsletterconfirmation", "newsletter.dd.widgetConf.decorationImgPath": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/modules/newsletter/dd/hd/newsletter-decoration.jpg", "newsletter.dd.widgetConf.brandName": "Hotels.com", "newsletter.dd.widgetConf.deviceOS": "", "newsletter.dd.widgetConf.badgeLocale": "", "newsletter.dd.widgetConf.confirmation.image.wide": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/modules/newsletter/dd/confirmation/illustration-blur-hd.jpg", "newsletter.dd.widgetConf.confirmation.image.wide.rtl": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/modules/newsletter/dd/confirmation/illustration-blur-rtl-hd.jpg", "newsletter.dd.widgetConf.confirmation.image.narrow": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/modules/newsletter/dd/confirmation/mobile/illustration-blur-hd.jpg", "newsletter.dd.widgetConf.confirmation.image.narrow.rtl": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/brands/hcom/modules/newsletter/dd/confirmation/mobile/illustration-blur-rtl-hd.jpg", "newsletter.dd.widgetConf.tncLink": "/customer_care/terms_conditions.html", "newsletter.dd.widgetConf.ppLink": "/customer_care/privacy.html", "newsletter.dd.widgetConf.targetOrigin": "https://vi.hotels.com", "newsletter.dd.widgetConf.proxyUrl": "https://vi.hotels.com/profile/newsletter.html", "newsletter.dd.widgetConf.nativeApplicationDownloadUrl": "", "newsletter.dd.widgetConf.showLogin": false, "newsletter.dd.confirmationCloseButtonLabel": "OK", "assetPath": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/", "templatePath": "https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/", "newsletter.standard.enabled": true, "newsletter.standard.templates.form": "hcom.templates.modules.standardnewsletter", "newsletter.standard.templates.confirmation": "hcom.templates.modules.standardnewsletterconfirmation", "newsletter.standard.widgetConf.tncLink": "/customer_care/terms_conditions.html", "newsletter.standard.widgetConf.ppLink": "/customer_care/privacy.html", "newsletter.standard.widgetConf.targetOrigin": "https://vi.hotels.com", "newsletter.standard.widgetConf.proxyUrl": "https://vi.hotels.com/profile/standard_newsletter.html", "newsletter.standard.confirmationCloseButtonLabel": "Đóng", "module.header.contextSelector.selectors": { "container": "header .context-selector", "currencySelector": "#header-toggle-currency" }, "module.autosuggest.boostConfig": "config-boost-champion", "module.autosuggest.version": "champion", "module.autosuggest.source": "https://lookup.hotels.com/egta/suggest/champion/json", "module.autosuggest.resolve": "https://lookup.hotels.com/egta/resolve/champion/json", "common.pointOfSale.numberSeparators": ".,", "common.imageBase": "https://a.cdn-hotels.com/uswest2/da/assets/s/63.0.10598/images/themes/red/", "common.clientToken": "C8Tl3xSgXeifOsndMWukI2r8_8E.", "common.social.fb.appId": "105208249622845", "common.social.fb.apiVersion": "v2.2", "brand": "HCOM_VN", "dio.util.dcs.oms.pageload.events": "", "common.tracking.tagCommanderContainer": "//cdn.tagcommander.com/4285/tc_hotels_com_20.js", "common.tracking.tagCommanderServerSidePixel": "https://serverside4285.tagcommander.com/21/", "common.tracking.environment": "prod", "common.tracking.harvester": "https://apihotels.net/onestream/events/", "ads.libraryUrl": "https://www.uciservice.com/assets/ads/2.0/33959975b0b908d06e8e0f823d73a5565524ec00/expads-hcom-min.js", "ads.targetingConfiguration": { "mc1": "9914c63497c0462f822c05ca2ae0fd3a", "cmptst": "", "activity": "a0f4e339-9e2c-4d3d-be94-942cfa0cbd9e", "ssl": true }, "ads.slotConfigurations": [], "usedV2Experiments": ["7561", "9246", "8056", "9145", "7861", "9962", "7666", "8235", "10074", "2176", "8691", "9957", "6425", "8448", "6549", "4869", "9817", "7296", "9991", "8287", "7576", "9491", "6184", "9946", "5104", "9605", "6039", "9606", "7108"] }; var injectedData = { "commonDataBlock": { "user": { "sessionId": "m2pXZB5GlIiNPd7_OX_VjqhAuS.hpa-bcfdcc9b9-z9wmv", "guid": "9914c634-97c0-462f-822c-05ca2ae0fd3a", "wrStatus": "Returning Visitor", "pos": "HCOM_VN", "locale": "vi_VN", "geolocation": { "latitude": "21.03", "longitude": "105.85" }, "platformId": "Desktop", "clientId": "357708", "signInState": "anonymous", "ipAddress": "58.187.67.83", "hrwMemberStatus": "notApplicable", "fcStatus": "notApplicable", "newsletterOptInStatus": "unknown", "visitorState": "newVisitor", "existingCustomer": 0, "hrwTier": "notApplicable", "signInMethod": "notApplicable", "cookieConsentStatus": "User Consented" }, "page": { "pageName": "deals :: custompage", "siteSection": "deals", "random10Alpha": "3wg0uvhqvi", "random10Numeric": "6322360501", "currency": "VND", "additionalPageInformation2": "deals :: custompage", "fullURL": "https://vi.hotels.com/page/coronavirus-booking-information/?pos\u003dHCOM_VN\u0026locale\u003dvi_VN", "requestId": "85db58d4-50cb-11eb-98b4-d222eda4a453", "dataCentre": "aws.us-west-2.unknown" }, "booking": { "lpas": false }, "marketing": { "restrictedLastTouch": { "marketingCode": "Brand", "fullMarketingCode": "Brand" }, "currentUnrestricted": { "marketingCode": "Brand", "fullMarketingCode": "Brand" }, "currentRestricted": { "marketingCode": "Brand", "fullMarketingCode": "Brand" } }, "event": { "eventType": "la", "bot": false }, "mvtHistory": { "mvts": "98.6.0.i31:138.0.2:277.0.0:495.7.0.i8:1014.0.0:1015.2.0.i9:1507.0.0:1508.2.0.i3:1509.0.0:1510.0.0:1825.0.0:1871.2.0.i7:1946.0.0:2089.2.0.i3:2383.2.0.i1:2569.0.0:2596.0.0:2634.1.0.i10:2796.0.0.i2:3277.0.0:4115.0.0:4154.2.0.i4:4163.0.0:4170.1.0.i3:4247.0.0:4301.0.0.i7:4462.0.0:4532.1.0.i4:4983.0.0:1.0.0.i0:365.0.0.i0:376.8.0.i151:555.10.0.i1:785.1.0.i12:904.0.0.i0:972.0.0.i0:1167.0.0.i0:1291.0.0.i16:1292.0.0.i7:1293.0.0.i37:1294.25.0.i36:1366.0.0.i0:1439.0.0.i0:2176.1.0.i44:2638.0.0.i0:2768.0.0.i0:2791.0.0.i2:2792.0.0.i1:3249.1.0.i1:3664.0.0.i0:3736.0.0.i0:3822.0.0.i0:4178.0.0.i0:4200.1.0.i10:4290.0.0.i0:4440.2.0.i5:4592.0.0.i0:4595.0.0.i5:4677.0.0.i1:4678.0.0.i1:4725.0.0.i1:4793.1.0.i1:4794.0.0.i26:4824.1.0.i5:4827.1.0.i1:4828.1.0.i5:4869.0.0.i1:4935.0.0.i1:4937.0.0.i0:4952.0.0.i33:4953.0.0.i33:4956.1.0.i47:4961.0.0.i1:4964.1.0.i2:4992.0.0.i1:5003.0.0.i1:5037.0.0.i0:5073.0.0.i1:5104.0.0.i1:5167.0.0.i1:5184.0.0.i1:5222.1.0.i3:5227.1.0.i3:5234.0.0.i1:5236.1.0.i2:5274.0.0.i0:5277.0.0.i1:5302.0.0.i0:5342.0.0.i0:5349.0.0.i1:5358.0.0.i1:5571.1.0.i2:5597.0.0.i5:5658.0.0.i0:5663.0.0.i0:5664.0.0.i1:5687.0.0.i1:5695.1.0.i3:5756.0.0.i1:5758.0.0.i1:5759.0.0.i1:5760.0.0.i1:5775.1.0.i3:5826.0.0.i1:5843.0.0.i1:5845.1.0.i2:5940.0.0.i1:5971.0.0.i1:5979.0.0.i0:6033.1.0.i9:6039.0.0.i1:6041.1.0.i2:6046.1.0.i3:6171.1.0.i14:6184.0.0.i0:6205.0.0.i0:6206.0.0.i0:6232.0.0.i0:6242.1.0.i2:6244.0.0.i0:6246.0.0.i0:6271.0.0.i1:6299.0.0.i0:6320.2.0.i6:6357.1.0.i0:6369.2.0.i5:6370.1.0.i4:6388.0.0.i2:6413.3.0.i6:6425.2.0.i0:6439.0.0.i0:6440.1.0.i1:6442.0.0.i0:6451.1.0.i2:6476.0.0.i0:6494.2.0.i0:6532.0.0.i1:6544.2.0.i3:6549.0.0.i0:6550.1.0.i2:6553.1.0.i5:6574.0.0.i0:6659.0.0.i0:6667.0.0.i0:6690.0.0.i0:6710.0.0.i0:6725.2.0.i2:6726.2.0.i2:6727.1.0.i2:6728.0.0.i0:6751.0.0.i0:6755.1.0.i2:6761.0.0.i0:6775.0.0.i0:6779.0.0.i0:6807.0.0.i0:6844.0.0.i0:6859.3.0.i0:6866.0.0.i0:6874.0.0.i0:6890.0.0.i1:6907.0.0.i0:6909.0.0.i0:6911.0.0.i0:6913.0.0.i0:6927.0.0.i0:6938.1.0.i2:6939.1.0.i2:6940.0.0.i0:6941.1.0.i2:6942.1.0.i2:6944.1.0.i2:6946.0.0.i0:6947.1.0.i2:6959.0.0.i0:6966.0.0.i0:6991.0.0.i0:7004.0.0.i0:7015.1.0.i7:7031.0.0.i0:7036.0.0.i0:7064.2.0.i6:7066.0.0.i0:7078.0.0.i0:7079.1.0.i3:7080.0.0.i0:7088.0.0.i0:7108.0.0.i0:7115.0.0.i0:7121.0.0.i0:7132.0.0.i0:7144.1.0.i3:7145.1.0.i2:7146.0.0.i0:7148.0.0.i0:7157.0.0.i0:7164.0.0.i0:7177.1.0.i1:7192.1.0.i6:7197.0.0.i0:7214.0.0.i0:7215.1.0.i9:7238.0.0.i0:7280.1.0.i3:7284.0.0.i0:7296.0.0.i0:7305.2.0.i2:7306.2.0.i2:7308.0.0.i0:7327.0.0.i0:7334.0.0.i0:7343.0.0.i4:7353.1.0.i10:7360.1.0.i1:7362.0.0.i0:7368.1.0.i2:7384.0.0.i0:7385.0.0.i0:7395.3.0.i9:7402.1.0.i7:7404.0.0.i0:7414.1.0.i2:7436.0.0.i0:7440.0.0.i0:7450.0.0.i0:7451.0.0.i0:7484.3.0.i3:7500.0.0.i0:7501.0.0.i0:7527.0.0.i0:7550.0.0.i0:7552.1.0.i23:7561.2.0.i56:7576.0.0.i0:7603.0.0.i0:7605.0.0.i0:7616.1.0.i5:7625.0.0.i0:7634.0.0.i0:7635.0.0.i0:7660.1.0.i1:7666.0.0.i0:7696.1.0.i0:7700.0.0.i0:7701.1.0.i0:7712.0.0.i0:7715.0.0.i0:7734.0.0.i0:7740.3.0.i11:7741.0.0.i0:7763.0.0.i0:7765.2.0.i5:7773.0.0.i0:7787.0.0.i0:7808.0.0.i0:7821.0.0.i0:7825.0.0.i0:7832.2.0.i3:7844.0.0.i0:7855.0.0.i9:7858.0.0.i0:7861.4.0.i26:7864.1.0.i6:7865.1.0.i5:7867.0.0.i0:7870.0.0.i0:7871.0.0.i0:7878.0.0.i2:7881.0.0.i0:7890.0.0.i1:7895.0.0.i0:7896.1.0.i0:7899.0.0.i0:7912.0.0.i0:7913.0.0.i0:7937.0.0.i0:7947.0.0.i0:7950.0.0.i0:7954.0.0.i0:7966.0.0.i0:7982.1.0.i1:7983.0.0.i0:7990.0.0.i0:7992.2.0.i12:8001.0.0.i0:8006.0.0.i0:8017.0.0.i0:8026.0.0.i0:8027.2.0.i3:8029.1.0.i4:8033.0.0.i0:8037.0.0.i0:8039.2.0.i8:8049.0.0.i0:8056.0.0.i0:8065.2.0.i17:8070.0.0.i0:8071.0.0.i0:8072.0.0.i0:8073.0.0.i0:8075.0.0.i0:8092.0.0.i0:8102.0.0.i0:8103.0.0.i0:8115.1.0.i15:8121.1.0.i2:8130.1.0.i0:8141.1.0.i0:8143.1.0.i2:8167.0.0.i0:8171.1.0.i6:8177.0.0.i0:8193.0.0.i0:8197.6.0.i7:8204.0.0.i0:8210.1.0.i3:8218.0.0.i0:8220.0.0.i0:8225.0.0.i0:8227.0.0.i0:8231.2.0.i4:8235.0.0.i0:8237.0.0.i0:8248.3.0.i5:8258.2.0.i11:8263.1.0.i6:8267.0.0.i0:8269.1.0.i11:8272.0.0.i0:8275.1.0.i3:8280.1.0.i3:8281.1.0.i8:8287.0.0.i0:8298.0.0.i3:8306.0.0.i0:8326.0.0.i0:8336.2.0.i10:8347.0.0.i0:8348.1.0.i2:8354.0.0.i0:8365.3.0.i4:8370.1.0.i9:8379.1.0.i12:8380.3.0.i2:8385.0.0.i0:8390.2.0.i7:8400.0.0.i0:8405.1.0.i8:8409.2.0.i0:8410.3.0.i0:8425.1.0.i6:8426.0.0.i0:8431.0.0.i0:8434.0.0.i0:8443.1.0.i4:8444.0.0.i0:8448.0.0.i0:8451.0.0.i0:8459.0.0.i0:8477.0.0.i0:8483.0.0.i0:8485.1.0.i6:8488.0.0.i0:8494.0.0.i0:8506.0.0.i0:8524.0.0.i0:8533.0.0.i0:8536.0.0.i0:8549.2.0.i5:8558.0.0.i0:8567.0.0.i5:8587.0.0.i0:8591.0.0.i4:8592.0.0.i0:8598.0.0.i0:8605.0.0.i0:8612.0.0.i0:8617.2.0.i2:8621.2.0.i2:8624.1.0.i4:8625.2.0.i3:8627.0.0.i0:8637.0.0.i0:8651.2.0.i2:8652.2.0.i2:8656.0.0.i0:8657.0.0.i0:8667.0.0.i0:8670.0.0.i0:8671.2.0.i2:8674.1.0.i2:8676.1.0.i2:8683.2.0.i3:8691.1.0.i1:8692.0.0.i0:8693.0.0.i0:8694.1.0.i12:8697.1.0.i6:8698.0.0.i0:8700.0.0.i0:8708.0.0.i0:8711.2.0.i2:8714.1.0.i8:8718.0.0.i0:8738.0.0.i0:8743.0.0.i0:8758.2.0.i5:8763.0.0.i0:8769.0.0.i0:8781.2.0.i0:8789.1.0.i15:8798.0.0.i0:8799.2.0.i5:8817.1.0.i0:8820.0.0.i0:8824.2.0.i17:8831.1.0.i2:8832.1.0.i0:8836.0.0.i0:8867.0.0.i3:8885.0.0.i0:8894.0.0.i0:8900.1.0.i0:8901.0.0.i0:8915.0.0.i0:8919.0.0.i0:8926.1.0.i0:8928.3.0.i12:8931.2.0.i1:8932.2.0.i0:8933.0.0.i0:8940.0.0.i0:8941.0.0.i0:8944.1.0.i0:8952.0.0.i0:8954.0.0.i0:8955.0.0.i0:8956.0.0.i0:8963.0.0.i0:8967.0.0.i0:8968.0.0.i0:8969.0.0.i0:8975.0.0.i0:8976.2.0.i6:8978.0.0.i0:8987.0.0.i0:8988.1.0.i5:8990.0.0.i0:8991.1.0.i4:8992.0.0.i0:8996.0.0.i0:9002.1.0.i16:9004.0.0.i0:9008.0.0.i0:9014.0.0.i0:9023.0.0.i0:9026.0.0.i0:9032.0.0.i0:9035.1.0.i10:9037.0.0.i1:9043.0.0.i0:9044.0.0.i0:9048.0.0.i0:9056.0.0.i0:9062.0.0.i0:9065.3.0.i3:9068.0.0.i0:9069.0.0.i0:9083.0.0.i0:9091.2.0.i0:9100.2.0.i3:9121.0.0.i0:9127.0.0.i0:9128.0.0.i0:9130.3.0.i4:9134.0.0.i0:9136.0.0.i0:9145.0.0.i1:9151.0.0.i0:9154.0.0.i0:9155.0.0.i0:9164.0.0.i0:9165.0.0.i0:9166.3.0.i3:9167.0.0.i0:9168.0.0.i0:9169.0.0.i0:9171.0.0.i0:9173.1.0.i2:9174.0.0.i0:9182.0.0.i0:9183.2.0.i3:9192.2.0.i0:9197.0.0.i0:9198.3.0.i0:9199.0.0.i0:9201.0.0.i0:9203.0.0.i0:9208.0.0.i0:9214.1.0.i2:9219.2.0.i0:9220.3.0.i9:9229.0.0.i0:9246.0.0.i0:9251.0.0.i0:9254.0.0.i0:9255.0.0.i0:9257.0.0.i0:9260.0.0.i0:9262.1.0.i3:9263.0.0.i0:9273.0.0.i0:9281.0.0.i0:9282.0.0.i0:9293.0.0.i0:9295.0.0.i0:9296.1.0.i3:9297.0.0.i0:9301.0.0.i0:9306.0.0.i0:9313.0.0.i0:9324.0.0.i0:9333.0.0.i0:9343.0.0.i0:9347.0.0.i0:9351.0.0.i0:9363.0.0.i0:9364.0.0.i0:9368.0.0.i0:9376.2.0.i5:9380.0.0.i0:9385.0.0.i0:9401.0.0.i0:9405.1.0.i2:9410.0.0.i0:9418.0.0.i0:9419.0.0.i0:9420.2.0.i3:9424.2.0.i1:9427.1.0.i7:9431.1.0.i3:9434.2.0.i3:9435.0.0.i0:9439.0.0.i0:9441.0.0.i0:9444.0.0.i0:9449.1.0.i5:9455.1.0.i1:9459.0.0.i0:9460.1.0.i3:9461.0.0.i0:9467.0.0.i0:9469.1.0.i3:9470.0.0.i0:9475.1.0.i1:9477.0.0.i0:9483.1.0.i0:9491.0.0.i0:9493.1.0.i5:9501.0.0.i0:9508.0.0.i0:9510.2.0.i2:9516.0.0.i0:9524.0.0.i0:9528.2.0.i2:9529.0.0.i0:9531.3.0.i3:9532.1.0.i2:9535.1.0.i2:9538.1.0.i0:9549.0.0.i0:9564.0.0.i0:9565.0.0.i0:9567.0.0.i0:9568.2.0.i3:9581.0.0.i0:9583.0.0.i0:9585.2.0.i12:9586.1.0.i2:9588.0.0.i0:9593.3.0.i3:9595.0.0.i0:9596.0.0.i0:9600.0.0.i0:9601.0.0.i0:9605.2.0.i5:9606.2.0.i12:9613.2.0.i5:9614.0.0.i0:9619.2.0.i2:9621.1.0.i6:9625.0.0.i0:9627.0.0.i0:9629.0.0.i0:9630.0.0.i0:9635.0.0.i0:9636.0.0.i0:9641.1.0.i4:9652.3.0.i8:9656.0.0.i0:9657.0.0.i0:9659.0.0.i0:9660.0.0.i0:9661.0.0.i0:9665.1.0.i3:9667.0.0.i0:9669.1.0.i0:9674.0.0.i0:9677.1.0.i2:9679.1.0.i3:9691.1.0.i6:9692.1.0.i8:9693.0.0.i0:9694.1.0.i0:9698.4.0.i2:9699.0.0.i0:9706.0.0.i0:9714.0.0.i0:9716.0.0.i0:9720.2.0.i2:9727.0.0.i0:9728.0.0.i0:9729.1.0.i1:9733.1.0.i16:9737.0.0.i0:9748.0.0.i0:9749.0.0.i0:9750.0.0.i0:9751.1.0.i5:9752.0.0.i0:9754.2.0.i3:9755.0.0.i0:9757.2.0.i12:9758.0.0.i3:9763.1.0.i2:9771.1.0.i1:9789.0.0.i0:9795.3.0.i3:9806.0.0.i0:9807.0.0.i0:9814.0.0.i0:9817.0.0.i0:9819.0.0.i0:9824.1.0.i4:9837.0.0.i0:9852.1.0.i13:9853.0.0.i0:9854.0.0.i0:9857.0.0.i0:9863.0.0.i0:9864.0.0.i0:9865.0.0.i0:9870.3.0.i0:9871.0.0.i0:9876.0.0.i0:9884.0.0.i0:9887.0.0.i0:9890.0.0.i0:9894.0.0.i0:9897.0.0.i0:9909.0.0.i9:9914.0.0.i0:9916.1.0.i1:9917.1.0.i2:9919.1.0.i1:9924.0.0.i0:9925.0.0.i0:9927.0.0.i0:9928.1.0.i2:9930.0.0.i0:9945.0.0.i7:9946.0.0.i0:9948.0.0.i0:9950.1.0.i1:9955.0.0.i0:9956.0.0.i0:9957.2.0.i2:9961.0.0.i0:9962.1.0.i1:9970.2.0.i3:9971.0.0.i5:9974.0.0.i0:9976.0.0.i0:9980.0.0.i0:9990.0.0.i0:9991.0.0.i0:9992.0.0.i0:9993.0.0.i0:10001.2.0.i2:10002.0.0.i0:10010.1.0.i1:10013.0.0.i0:10014.0.0.i4:10015.0.0.i0:10025.0.0.i0:10029.0.0.i0:10033.0.0.i0:10039.0.0.i0:10042.0.0.i0:10049.0.0.i0:10055.0.0.i0:10057.4.0.i6:10058.1.0.i1:10061.0.0.i0:10063.1.0.i1:10068.0.0.i0:10073.0.0.i1:10074.0.0.i0:10075.0.0.i0:10076.0.0.i0:10077.1.0.i3:10079.0.0.i0:10083.0.0.i0:10102.1.0.i0:10103.0.0.i0:10108.0.0.i0:10113.0.0.i0:10121.1.0.i1:10125.1.0.i1:10127.0.0.i1:10137.0.0.i0:10201.0.0.i0:37835.0.0.i108904|HCOM_VN", "athenaMvts": "1.0.0,365.0.0,376.151.8,555.1.10,785.12.1,904.0.0,972.0.0,1167.0.0,1291.16.0,1292.7.0,1293.37.0,1294.36.25,1366.0.0,1439.0.0,2176.44.1,2638.0.0,2768.0.0,2791.2.0,2792.1.0,3249.1.1,3664.0.0,3736.0.0,3822.0.0,4178.0.0,4200.10.1,4290.0.0,4440.5.2,4592.0.0,4595.5.0,4677.1.0,4678.1.0,4725.1.0,4793.1.1,4794.26.0,4824.5.1,4827.1.1,4828.5.1,4869.1.0,4935.1.0,4937.0.0,4952.33.0,4953.33.0,4956.47.1,4961.1.0,4964.2.1,4992.1.0,5003.1.0,5037.0.0,5073.1.0,5104.1.0,5167.1.0,5184.1.0,5222.3.1,5227.3.1,5234.1.0,5236.2.1,5274.0.0,5277.1.0,5302.0.0,5342.0.0,5349.1.0,5358.1.0,5571.2.1,5597.5.0,5658.0.0,5663.0.0,5664.1.0,5687.1.0,5695.3.1,5756.1.0,5758.1.0,5759.1.0,5760.1.0,5775.3.1,5826.1.0,5843.1.0,5845.2.1,5940.1.0,5971.1.0,5979.0.0,6033.9.1,6039.1.0,6041.2.1,6046.3.1,6171.14.1,6184.0.0,6205.0.0,6206.0.0,6232.0.0,6242.2.1,6244.0.0,6246.0.0,6271.1.0,6299.0.0,6320.6.2,6357.0.1,6369.5.2,6370.4.1,6388.2.0,6413.6.3,6425.0.2,6439.0.0,6440.1.1,6442.0.0,6451.2.1,6476.0.0,6494.0.2,6532.1.0,6544.3.2,6549.0.0,6550.2.1,6553.5.1,6574.0.0,6659.0.0,6667.0.0,6690.0.0,6710.0.0,6725.2.2,6726.2.2,6727.2.1,6728.0.0,6751.0.0,6755.2.1,6761.0.0,6775.0.0,6779.0.0,6807.0.0,6844.0.0,6859.0.3,6866.0.0,6874.0.0,6890.1.0,6907.0.0,6909.0.0,6911.0.0,6913.0.0,6927.0.0,6938.2.1,6939.2.1,6940.0.0,6941.2.1,6942.2.1,6944.2.1,6946.0.0,6947.2.1,6959.0.0,6966.0.0,6991.0.0,7004.0.0,7015.7.1,7031.0.0,7036.0.0,7064.6.2,7066.0.0,7078.0.0,7079.3.1,7080.0.0,7088.0.0,7108.0.0,7115.0.0,7121.0.0,7132.0.0,7144.3.1,7145.2.1,7146.0.0,7148.0.0,7157.0.0,7164.0.0,7177.1.1,7192.6.1,7197.0.0,7214.0.0,7215.9.1,7238.0.0,7280.3.1,7284.0.0,7296.0.0,7305.2.2,7306.2.2,7308.0.0,7327.0.0,7334.0.0,7343.4.0,7353.10.1,7360.1.1,7362.0.0,7368.2.1,7384.0.0,7385.0.0,7395.9.3,7402.7.1,7404.0.0,7414.2.1,7436.0.0,7440.0.0,7450.0.0,7451.0.0,7484.3.3,7500.0.0,7501.0.0,7527.0.0,7550.0.0,7552.23.1,7561.56.2,7576.0.0,7603.0.0,7605.0.0,7616.5.1,7625.0.0,7634.0.0,7635.0.0,7660.1.1,7666.0.0,7696.0.1,7700.0.0,7701.0.1,7712.0.0,7715.0.0,7734.0.0,7740.11.3,7741.0.0,7763.0.0,7765.5.2,7773.0.0,7787.0.0,7808.0.0,7821.0.0,7825.0.0,7832.3.2,7844.0.0,7855.9.0,7858.0.0,7861.26.4,7864.6.1,7865.5.1,7867.0.0,7870.0.0,7871.0.0,7878.2.0,7881.0.0,7890.1.0,7895.0.0,7896.0.1,7899.0.0,7912.0.0,7913.0.0,7937.0.0,7947.0.0,7950.0.0,7954.0.0,7966.0.0,7982.1.1,7983.0.0,7990.0.0,7992.12.2,8001.0.0,8006.0.0,8017.0.0,8026.0.0,8027.3.2,8029.4.1,8033.0.0,8037.0.0,8039.8.2,8049.0.0,8056.0.0,8065.17.2,8070.0.0,8071.0.0,8072.0.0,8073.0.0,8075.0.0,8092.0.0,8102.0.0,8103.0.0,8115.15.1,8121.2.1,8130.0.1,8141.0.1,8143.2.1,8167.0.0,8171.6.1,8177.0.0,8193.0.0,8197.7.6,8204.0.0,8210.3.1,8218.0.0,8220.0.0,8225.0.0,8227.0.0,8231.4.2,8235.0.0,8237.0.0,8248.5.3,8258.11.2,8263.6.1,8267.0.0,8269.11.1,8272.0.0,8275.3.1,8280.3.1,8281.8.1,8287.0.0,8298.3.0,8306.0.0,8326.0.0,8336.10.2,8347.0.0,8348.2.1,8354.0.0,8365.4.3,8370.9.1,8379.12.1,8380.2.3,8385.0.0,8390.7.2,8400.0.0,8405.8.1,8409.0.2,8410.0.3,8425.6.1,8426.0.0,8431.0.0,8434.0.0,8443.4.1,8444.0.0,8448.0.0,8451.0.0,8459.0.0,8477.0.0,8483.0.0,8485.6.1,8488.0.0,8494.0.0,8506.0.0,8524.0.0,8533.0.0,8536.0.0,8549.5.2,8558.0.0,8567.5.0,8587.0.0,8591.4.0,8592.0.0,8598.0.0,8605.0.0,8612.0.0,8617.2.2,8621.2.2,8624.4.1,8625.3.2,8627.0.0,8637.0.0,8651.2.2,8652.2.2,8656.0.0,8657.0.0,8667.0.0,8670.0.0,8671.2.2,8674.2.1,8676.2.1,8683.3.2,8691.1.1,8692.0.0,8693.0.0,8694.12.1,8697.6.1,8698.0.0,8700.0.0,8708.0.0,8711.2.2,8714.8.1,8718.0.0,8738.0.0,8743.0.0,8758.5.2,8763.0.0,8769.0.0,8781.0.2,8789.15.1,8798.0.0,8799.5.2,8817.0.1,8820.0.0,8824.17.2,8831.2.1,8832.0.1,8836.0.0,8867.3.0,8885.0.0,8894.0.0,8900.0.1,8901.0.0,8915.0.0,8919.0.0,8926.0.1,8928.12.3,8931.1.2,8932.0.2,8933.0.0,8940.0.0,8941.0.0,8944.0.1,8952.0.0,8954.0.0,8955.0.0,8956.0.0,8963.0.0,8967.0.0,8968.0.0,8969.0.0,8975.0.0,8976.6.2,8978.0.0,8987.0.0,8988.5.1,8990.0.0,8991.4.1,8992.0.0,8996.0.0,9002.16.1,9004.0.0,9008.0.0,9014.0.0,9023.0.0,9026.0.0,9032.0.0,9035.10.1,9037.1.0,9043.0.0,9044.0.0,9048.0.0,9056.0.0,9062.0.0,9065.3.3,9068.0.0,9069.0.0,9083.0.0,9091.0.2,9100.3.2,9121.0.0,9127.0.0,9128.0.0,9130.4.3,9134.0.0,9136.0.0,9145.1.0,9151.0.0,9154.0.0,9155.0.0,9164.0.0,9165.0.0,9166.3.3,9167.0.0,9168.0.0,9169.0.0,9171.0.0,9173.2.1,9174.0.0,9182.0.0,9183.3.2,9192.0.2,9197.0.0,9198.0.3,9199.0.0,9201.0.0,9203.0.0,9208.0.0,9214.2.1,9219.0.2,9220.9.3,9229.0.0,9246.0.0,9251.0.0,9254.0.0,9255.0.0,9257.0.0,9260.0.0,9262.3.1,9263.0.0,9273.0.0,9281.0.0,9282.0.0,9293.0.0,9295.0.0,9296.3.1,9297.0.0,9301.0.0,9306.0.0,9313.0.0,9324.0.0,9333.0.0,9343.0.0,9347.0.0,9351.0.0,9363.0.0,9364.0.0,9368.0.0,9376.5.2,9380.0.0,9385.0.0,9401.0.0,9405.2.1,9410.0.0,9418.0.0,9419.0.0,9420.3.2,9424.1.2,9427.7.1,9431.3.1,9434.3.2,9435.0.0,9439.0.0,9441.0.0,9444.0.0,9449.5.1,9455.1.1,9459.0.0,9460.3.1,9461.0.0,9467.0.0,9469.3.1,9470.0.0,9475.1.1,9477.0.0,9483.0.1,9491.0.0,9493.5.1,9501.0.0,9508.0.0,9510.2.2,9516.0.0,9524.0.0,9528.2.2,9529.0.0,9531.3.3,9532.2.1,9535.2.1,9538.0.1,9549.0.0,9564.0.0,9565.0.0,9567.0.0,9568.3.2,9581.0.0,9583.0.0,9585.12.2,9586.2.1,9588.0.0,9593.3.3,9595.0.0,9596.0.0,9600.0.0,9601.0.0,9605.5.2,9606.12.2,9613.5.2,9614.0.0,9619.2.2,9621.6.1,9625.0.0,9627.0.0,9629.0.0,9630.0.0,9635.0.0,9636.0.0,9641.4.1,9652.8.3,9656.0.0,9657.0.0,9659.0.0,9660.0.0,9661.0.0,9665.3.1,9667.0.0,9669.0.1,9674.0.0,9677.2.1,9679.3.1,9691.6.1,9692.8.1,9693.0.0,9694.0.1,9698.2.4,9699.0.0,9706.0.0,9714.0.0,9716.0.0,9720.2.2,9727.0.0,9728.0.0,9729.1.1,9733.16.1,9737.0.0,9748.0.0,9749.0.0,9750.0.0,9751.5.1,9752.0.0,9754.3.2,9755.0.0,9757.12.2,9758.3.0,9763.2.1,9771.1.1,9789.0.0,9795.3.3,9806.0.0,9807.0.0,9814.0.0,9817.0.0,9819.0.0,9824.4.1,9837.0.0,9852.13.1,9853.0.0,9854.0.0,9857.0.0,9863.0.0,9864.0.0,9865.0.0,9870.0.3,9871.0.0,9876.0.0,9884.0.0,9887.0.0,9890.0.0,9894.0.0,9897.0.0,9909.9.0,9914.0.0,9916.1.1,9917.2.1,9919.1.1,9924.0.0,9925.0.0,9927.0.0,9928.2.1,9930.0.0,9945.7.0,9946.0.0,9948.0.0,9950.1.1,9955.0.0,9956.0.0,9957.2.2,9961.0.0,9962.1.1,9970.3.2,9971.5.0,9974.0.0,9976.0.0,9980.0.0,9990.0.0,9991.0.0,9992.0.0,9993.0.0,10001.2.2,10002.0.0,10010.1.1,10013.0.0,10014.4.0,10015.0.0,10025.0.0,10029.0.0,10033.0.0,10039.0.0,10042.0.0,10049.0.0,10055.0.0,10057.6.4,10058.1.1,10061.0.0,10063.1.1,10068.0.0,10073.1.0,10074.0.0,10075.0.0,10076.0.0,10077.3.1,10079.0.0,10083.0.0,10102.0.1,10103.0.0,10108.0.0,10113.0.0,10121.1.1,10125.1.1,10127.1.0,10137.0.0,10201.0.0" } } };</script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.core.loyalty.hcomrewards.logo"
+        data-template="hcom.templates.core.loyalty.hcomRewards.logo"></script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.modules.header.common.snippet.currencyselectorlist"
+        data-template="hcom.templates.modules.header.common.snippet.currencyselectorlist"></script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.modules.header.common.snippet.posselectorlist"
+        data-template="hcom.templates.modules.header.common.snippet.posselectorlist"></script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.modules.ddnewsletter"
+        data-template="hcom.templates.modules.ddnewsletter"></script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.modules.ddnewsletterconfirmation"
+        data-template="hcom.templates.modules.ddnewsletterconfirmation"></script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.modules.standardnewsletter"
+        data-template="hcom.templates.modules.standardnewsletter"></script>
+    <script
+        data-deferred-src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/hcom.templates.modules.standardnewsletterconfirmation"
+        data-template="hcom.templates.modules.standardnewsletterconfirmation"></script>
+    <!-- ASSETHEAD END -->
+    <script
+        src="https://a.cdn-hotels.com/uswest2/da/assets/cat/js/63.0.10598/q-7-6-c-a-g-91-8w-98-f-d-2-9c-9d-9z-a4-5-9-v-8-e-a1-90-0-n-u-t-3-h6z-h6q-13-14-s-hp5-hp4-a9-15-9f-9t-12-b1-b3-b5-9i-9p-b4-8y-9w-16-hh-hj-hk-hg-ha-h5-h7-hf-25-9o-1m-f7"></script>
+    <script>var commonDataBlock = window.injectedData.commonDataBlock; var marketingDataLayer = window.injectedData.marketingDataLayer;</script>
+    <script>(function () {
+            var omnitureEscaped = "<script type=\"text/javascript\"><!--//--><![CDATA[//><!--\ns.channel = \"deals\";s.currencyCode = \"VND\";s.eVar4 = \"\x5Cx7CSI\x5Cx3Aanonymous\x5Cx7CVS\x5Cx3AnewVisitor\x5Cx7CHCR\x5Cx3AnotApplicable\x5Cx7CFC\x5Cx3AnotApplicable\x5Cx7CNS\x5Cx3Aunknown\x5Cx7CTI\x5Cx3AnotApplicable\x5Cx7CSM\x5Cx3AnotApplicable\x5Cx7CIR\x5Cx3Aanonymous\x5Cx7C\";s.eVar13 = \"357708\";s.eVar26 = \"VN\x5Cx3A\x5Cx3AHANOI\x5Cx3A\";s.eVar33 = \"deals\x5Cx20\x5Cx3A\x5Cx3A\x5Cx20custompage\";s.eVar34 = \"M2176\x5Cx3A044.001,M4869\x5Cx3A001.000,M6184\x5Cx3A000.000,M7296\x5Cx3A000.000,M7561\x5Cx3A056.002,M7576\x5Cx3A000.000,M8287\x5Cx3A000.000,M8448\x5Cx3A000.000,M9246\x5Cx3A000.000,M9491\x5Cx3A000.000,M9817\x5Cx3A000.000,M9946\x5Cx3A000.000,M9957\x5Cx3A002.002,M9962\x5Cx3A001.001,M9991\x5Cx3A000.000,M10074\x5Cx3A000.000,37835\x5Cx3A108904.000,M6039\x5Cx3A001.000,M8691\x5Cx3A001.001,M5104\x5Cx3A001.000,M7666\x5Cx3A000.000,M9606\x5Cx3A012.002,M8235\x5Cx3A000.000,M7861\x5Cx3A026.004,M6425\x5Cx3A000.002,M9605\x5Cx3A005.002,M6549\x5Cx3A000.000,M8056\x5Cx3A000.000,M7108\x5Cx3A000.000,M9145\x5Cx3A001.000\";s.eVar38 = \"pp\x5Cx7CHCOM_VN\x5Cx7Cvi_VN\x5Cx7Ccustompage\x5Cx7CCOVID\x5Cx2D19_Booking_Information\x5Cx7Cd1923b9b\x5Cx2Dd96c\x5Cx2D4334\x5Cx2Dae15\x5Cx2Da72aa831dbfe\";s.eVar39 = \"pp\x5Cx7CHCOM_VN\x5Cx7Cvi_VN\x5Cx7Ccustompage\x5Cx7CCOVID\x5Cx2D19_Booking_Information\x5Cx7Cd1923b9b\x5Cx2Dd96c\x5Cx2D4334\x5Cx2Dae15\x5Cx2Da72aa831dbfe\";s.eVar41 = \"VND\";s.eVar43 = \"vi_VN\x5Cx7CHCOM_VN\x5Cx7Cvi.hotels.com\";s.eVar61 = \"Desktop\";s.eVar80 = \"\";s.eVar93 = \"aws.us\x5Cx2Dwest\x5Cx2D2.unknown\";s.pageName = \"deals\x5Cx20\x5Cx3A\x5Cx3A\x5Cx20custompage\";s.prop5 = \"357708\";s.prop27 = \"9914c634\x5Cx2D97c0\x5Cx2D462f\x5Cx2D822c\x5Cx2D05ca2ae0fd3a\";s.prop28 = \"0\";s.prop32 = \"D\x5Cx3Dv43\";s.prop33 = \"D\x5Cx3Dv33\";s.prop34 = \"LA\x5Cx2D1338.0.feature_LASER_1302.1965\";s.prop36 = \"\x5Cx7CSI\x5Cx3Aanonymous\x5Cx7CVS\x5Cx3AnewVisitor\x5Cx7CHCR\x5Cx3AnotApplicable\x5Cx7CFC\x5Cx3AnotApplicable\x5Cx7CNS\x5Cx3Aunknown\x5Cx7CTI\x5Cx3AnotApplicable\x5Cx7CSM\x5Cx3AnotApplicable\x5Cx7CIR\x5Cx3Aanonymous\x5Cx7C\";s.prop38 = \"not\x5Cx20signed\x5Cx20in\";s.prop39 = \"not\x5Cx20signed\x5Cx20in\";s.prop46 = \"D\x5Cx3Dv61\";s.server = \"vi.hotels.com\";s.eVar95 = \"Unknown\"; if (dio.getObjectByName('dio.util.tracking')) { s.eVar59=dio.util.tracking.responsive('Desktop|deals :: custompage'); } ; s.list3 = 'D=v34'; s.t();s.eVar34 = null;\n  //--><!]]><\/script>", eventsToReport = "", content = {}; if (s && s.events) { eventsToReport = "s.events = \"" + s.events + "\";"; omnitureEscaped = omnitureEscaped.replace(/(s\.events.).*?;/, eventsToReport); } content = { "content": omnitureEscaped };
+            if (dio.getObjectByName("dio.util.prerender")) {
+                dio.util.prerender.append(content);
+            } else {
+                document.write(content.content);
+            }
+        })();</script>
+    <script>
+        !function () {
+            var harvester = dio.getClientData('common.tracking.harvester');
+            new OneStream.OneStreamDionysusExt(harvester);
+            window.dispatchEvent(new CustomEvent('OneStreamLoaded'));
+        }();
+    </script>
+
+    <script>
+        !function () {
+            var s = document.createElement('script');
+            var loadedFlag = false;
+            s.defer = true;
+            function loadBS() {
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+
+            var containerSrc = dio.getClientData('common.tracking.tagCommanderContainer');
+
+            s.src = containerSrc;
+
+            if (/hotel booking confirmation|Mob :: (?:iApp|aApp|iPad|aPad) :: Booking Enter Details/.test(dio.getObjectByName('commonDataBlock.page.pageName'))) {
+                loadBS();
+                loadedFlag = true;
+            } else {
+                // we will load TC regardless of user consent (consent constraints are set up in TC for every tag)
+                $(window).on('load', function () {
+                    loadBS();
+                    loadedFlag = true;
+                });
+            }
+
+            // need to reload TC once consent is given, so tags can fire
+            dio.event.subscribe('cookiePolicyGiven', function () {
+                if (loadedFlag) {
+                    tC && tC.script && tC.script.add && tC.script.add(containerSrc);
+                }
+            });
+        }();
+    </script>
+    <script
+        type="text/javascript">var _cf = _cf || []; _cf.push(['_setFsp', true]); _cf.push(['_setBm', true]); _cf.push(['_setAu', '/libraries/c55a86722no18719e56c2c1b8782e6c']); </script>
+    <script type="text/javascript" src="/libraries/c55a86722no18719e56c2c1b8782e6c"></script>
+</body>
+</html>
