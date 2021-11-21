@@ -1,0 +1,498 @@
+﻿
+@{
+    ViewBag.Title = "DisplayDetail";
+    Layout = "~/Views/Shared/_LayoutHeaderAndFooter.cshtml";
+}
+
+<!--Regulations-->
+<!--display detail-->
+<div class="list_tour_cate">
+
+    <div class="box_tour_cate">
+        <h1 class="name_tour_detail">@ViewBag.ListTour.TenTour</h1>
+        <div class="col-md-3 col-sm-3 col-xs-3 col-480-12">
+            <div class="row">
+                <div class="img_tour_km h_6667z img_tour_cate">
+                    <img class="w_100 img_item_tour"
+                         src="@ViewBag.ListTour.HinhAnh"
+                         alt="" style="height: 137.34px;">
+                    <div class="sale_tour_km">Giảm @ViewBag.ListTour.Sale%</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 col-480-12">
+            <div class="row">
+                <div class="sub_tour_cate">
+                    <div class="info_tour_cate">
+                        <b>Khởi hành từ:</b> @ViewBag.ListTour.DiemKhoiHanh<br />
+                        <b>Thời gian:</b> @ViewBag.ListTour.SoNgay NGÀY @ViewBag.ListTour.SoDem ĐÊM<br />
+                        <b>Giá tour:</b> <del> @string.Format("{0:#,##0}", ViewBag.ListTour.GiaTour) đ</del><br />
+                        @{
+                            var a = ViewBag.ListTour.GiaTour;
+                            var b = @ViewBag.ListTour.Sale;
+                            var price = string.Format("{0:#,##0}", a - (a * b / 100));
+
+                        }
+                        <b>Giá khuyến mãi:</b> <span style="color: red; font-size: 16px; font-weight: bold">@price đ </span><br />
+                        <b>Khởi hành ngày:</b> @ViewBag.ListTour.TimeKhoiHanh<br />
+                        <b>Giới thiệu tour:</b> @ViewBag.ListTour.GioiThieu  <br />
+                        <p class="oder_tour_cate" style="color:white"> <a href="@Url.Action("Index","Book",new { id = ViewBag.ListTour.Id} )" target="_blank" style="color:white;">Đặt Tour</a></p>
+                        <style>
+                            .class1 {
+                                color: white;
+                                background-color: aqua;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="content_detail_tour">
+        <div class="tit_detail_tour">
+            <span class="text_detail_tour">Chương trình tour</span>
+            <div class="pull-right" style="width: 202px">
+
+
+
+            </div>
+        </div>
+        <p style="text-align: center;">
+            <span style="font-size:16px;">
+                <span style="color:#B22222;"><strong>@ViewBag.ListTour.TenTour </strong></span>
+            </span>
+        </p>
+
+        <p style="text-align: center;">
+            <span style="font-size:16px;">
+                <span style="color:#B22222;">
+                    <em>
+                        Thời gian: @ViewBag.ListTour.SoNgay
+                        ng&agrave;y @ViewBag.ListTour.SoDem đ&ecirc;m&nbsp;&nbsp; Phương tiện: &Ocirc; t&ocirc;
+                    </em>
+                </span>
+            </span>
+        </p>
+
+        <div>
+            <span style="font-size:14px;">
+                <em>
+                    <!--Title-->
+                    <span style="color:#000000;">
+                        @ViewBag.ListTour.NoiDung
+                    </span>
+                </em>
+            </span>
+        </div>
+
+        <div style="text-align: center;">
+            <span style="font-size:16px;">
+                <span style="color:#B22222;">
+                    <em>
+                        <img alt=""
+                             src="@ViewBag.ListTour.HinhAnh"
+                             style="width: 900px; height: 506px;" />
+                    </em>
+                </span>
+            </span>
+        </div>
+        @if (ViewBag.ResCombo != null)
+        {
+            <div>
+                <br />
+                <span style="color:#B22222;">
+                    <span style="font-size:24px;">
+                        <strong>
+                            @ViewBag.ResCombo.TenCombo
+                        </strong>
+                    </span>
+                    <br />
+                    <span style="font-size:16px;">
+                        Combo bao gồm
+                    </span>
+                    <br />
+                </span>
+            </div>
+
+            <p>
+                <span style="color:#000000;">
+                    <span style="font-size:14px;">
+                        @*@ViewBag.ResCombo.NoiDung*@
+                        @{ 
+                            string s = ViewBag.ResCombo.NoiDung;
+                            string[] array = new string[s.Length];
+                            for (int i = 0; i < s.Length; i++)
+                            {
+                                if (s[i] == '-')
+                                {
+                                    for (int j = i + 1; j < s.Length; j++)
+                                    {
+                                        while (s[j] == '-')
+                                        {
+                                            string sub = s.Substring(i, j - i);
+
+                                            int k = 0;
+                                            do
+                                            {
+                                                if (array[k] == null)
+                                                {
+                                                    array[k] = sub;
+                                                    k = -1;
+                                                }
+                                                else
+                                                {
+                                                    k++;
+                                                }
+                                            } while (k > 0);
+                                            j = s.Length - 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @for (int i = 0; i < array.Length; i++)
+                        {
+                            if (@array[i] != null)
+                            {
+                                @array[i] <br />
+                            }
+                        }
+                    </span>
+                </span>
+            </p>
+
+
+
+            <!--ghi chú đặc biệt-->
+
+            <div>
+                <span style="color:#000000;">
+
+                </span><br />
+                <br />
+                <span style="color:#B22222;">
+                    <span style="font-size:16px;">
+                        <strong>
+                            Ghi chú đặc biệt
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <p>
+                <span style="color:#000000;">
+                    @*@ViewBag.ResCombo.Special*@
+                    @{
+                        string s1 = ViewBag.ResCombo.Special;
+                        string[] array1 = new string[s1.Length];
+                        for (int i = 0; i < s1.Length; i++)
+                        {
+                            if (s1[i] == '-')
+                            {
+                                for (int j = i + 1; j < s1.Length; j++)
+                                {
+                                    while (s1[j] == '-')
+                                    {
+                                        string sub = s1.Substring(i, j - i);
+
+                                        int k = 0;
+                                        do
+                                        {
+                                            if (array1[k] == null)
+                                            {
+                                                array1[k] = sub;
+                                                k = -1;
+                                            }
+                                            else
+                                            {
+                                                k++;
+                                            }
+                                        } while (k > 0);
+                                        j = s1.Length - 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @for (int i = 0; i < array1.Length; i++)
+                    {
+                        if (@array1[i] != null)
+                        {
+                            @array1[i] <br />
+                        }
+                    }
+                </span>
+            </p>
+            <!--end-->
+
+            <!--Điều kiện áp dụng-->
+            <div>
+                <span style="color:#000000;">
+
+                </span><br />
+                <br />
+                <span style="color:#B22222;">
+                    <span style="font-size:16px;">
+                        <strong>
+                            Điều kiện áp dụng
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <p>
+                <span style="color:#000000;">
+                    @*@ViewBag.ResCombo.DieuKien*@
+                    @{
+                        string s2 = ViewBag.ResCombo.DieuKien;
+                        string[] array2 = new string[s2.Length];
+                        for (int i = 0; i < s2.Length; i++)
+                        {
+                            if (s2[i] == '-')
+                            {
+                                for (int j = i + 1; j < s2.Length; j++)
+                                {
+                                    while (s2[j] == '-')
+                                    {
+                                        string sub = s2.Substring(i, j - i);
+
+                                        int k = 0;
+                                        do
+                                        {
+                                            if (array2[k] == null)
+                                            {
+                                                array2[k] = sub;
+                                                k = -1;
+                                            }
+                                            else
+                                            {
+                                                k++;
+                                            }
+                                        } while (k > 0);
+                                        j = s2.Length - 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @for (int i = 0; i < array2.Length; i++)
+                    {
+                        if (@array2[i] != null)
+                        {
+                            @array2[i] <br />
+                        }
+                    }
+                </span>
+            </p>
+            <!--end điều kiện áp dụng-->
+        }
+
+        <p style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: arial; font-size: 12px; text-align: center;">
+            &nbsp;
+        </p>
+
+        <div style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: arial; font-size: 12px; text-align: center;">
+
+
+
+
+
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">&nbsp;</span><br />
+                    <span style="color:#B22222;"><strong><u>Giá bao g&ocirc;̀m :</u></strong></span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Xe
+                        máy lạnh đưa đón su&ocirc;́t chương trình.
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- HDV
+                        nhi&ecirc;̣t tình có kinh nghi&ecirc;̣m , vui vẻ
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;-
+                        Kh&aacute;ch sạn ti&ecirc;u chuẩn 3 SAO: 2 kh&aacute;ch/ ph&ograve;ng ( lẻ nam/nữ ngủ 3
+                        người)
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Các
+                        bữa ăn: + 03 &nbsp;bữa ch&iacute;nh: 150.000đ/suất
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +&nbsp; 01 bữa ăn
+                        s&aacute;ng.
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Bảo
+                        hi&ecirc;̉m du lịch : mức bồi thường 20.000.000đ/vụ
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Nước
+                        su&ocirc;́i v&agrave; khăn lạnh.
+                    </span>
+                </span><br />
+                &nbsp;
+            </div>
+
+            <div style="text-align: left;">
+                <span style="color:#B22222;">
+                    <span style="font-size:14px;">
+                        <strong>
+                            <u>
+                                Giá kh&ocirc;ng bao g&ocirc;̀m :
+                            </u>
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Các
+                        chi phí sinh hoạt khác ngo&agrave;i chương tr&igrave;nh .
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Thức
+                        uống trong bữa ăn
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;-
+                        10%VAT
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        &nbsp;- Chi
+                        ph&iacute; GALA giao lưu buổi tối l&agrave; 100k/1 người.
+                    </span>
+                </span><br />
+                &nbsp;
+            </div>
+
+            <div style="text-align: left;">
+                <span style="color:#B22222;">
+                    <span style="font-size:14px;">
+                        <strong>
+                            <em>
+                                <u>
+                                    GI&Aacute; V&Eacute; TRẺ
+                                    EM:
+                                </u>
+                            </em>
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        <strong>
+                            <em>
+                                &nbsp;+ Trẻ em 11 tuổi trở l&ecirc;n mua 01
+                                v&eacute;.
+                            </em>
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        <strong>
+                            <em>
+                                &nbsp;+ Trẻ em 05 đến 10 tuổi mua 1/2 v&eacute;
+                                (B&eacute; c&oacute; ghế &amp; suất ăn như người lớn &ndash; B&eacute; ngủ chung với
+                                người th&acirc;n).
+                            </em>
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <div style="text-align: left;">
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        <strong>
+                            <em>
+                                &nbsp;+ Trẻ em dưới 05 tuổi: Kh&ocirc;ng t&iacute;nh
+                                v&eacute; (Phần ăn s&aacute;ng &amp; tham quan gia đ&igrave;nh tự
+                                lo).
+                            </em>
+                        </strong>
+                    </span>
+                </span>
+            </div>
+
+            <div>
+                <span style="font-size:14px;">
+                    <span style="color:#000000;">
+                        <strong>
+                            <em>
+                                CHÚC QUÝ KHÁCH CÓ
+                                CHUY&Ecirc;́N ĐI VUI VẺ VÀ THÚ VỊ
+                            </em>
+                        </strong>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>
+@Html.Partial("_Regulations")
+

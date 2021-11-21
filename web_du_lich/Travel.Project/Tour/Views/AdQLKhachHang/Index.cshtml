@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">Thông tin khách hàng</h1>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default panel-table">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col col-xs-6">
+                                <h3 class="panel-title">Danh sách khách hàng</h3>
+                            </div>
+                            <div class="col col-xs-6 text-right">
+                                <button type="button" class="btn btn-sm btn-primary btn-create">
+                                    Thêm
+                                    mới
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table table-striped table-bordered table-list" style="width:1000px">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <em class="fa fa-cog"></em>
+                                    </th>
+                                    <th class="hidden-xs">Mã số</th>
+                                    <th>Họ tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>CreatedAt</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in ViewBag.ListTour)
+                                {
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-default">
+                                                <em class="fa fa-pencil"></em>
+                                            </a> <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        </td>
+                                        <td class="hidden-xs">@item.Id</td>
+                                        <td>@item.FullName</td>
+                                        <td>@item.Address</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.CreatedAt</td>
+
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                        <!--paginate-->
+                        <div>
+                            <ul class="pagination" style="padding-left: 280px;">
+                                <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

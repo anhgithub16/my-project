@@ -1,0 +1,9 @@
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\obj\Debug\netcoreapp3.1\Security.csprojAssemblyReference.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\obj\Debug\netcoreapp3.1\Security.AssemblyInfoInputs.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\obj\Debug\netcoreapp3.1\Security.AssemblyInfo.cs
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\obj\Debug\netcoreapp3.1\Security.csproj.CoreCompileInputs.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\bin\Debug\netcoreapp3.1\Security.deps.json
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\bin\Debug\netcoreapp3.1\Security.dll
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\bin\Debug\netcoreapp3.1\Security.pdb
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\obj\Debug\netcoreapp3.1\Security.dll
+F:\Workspace\asp.net\asp.net proj\JWTs\Security\obj\Debug\netcoreapp3.1\Security.pdb

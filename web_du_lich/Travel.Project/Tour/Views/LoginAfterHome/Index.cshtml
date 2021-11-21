@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/NewFolder1/_layoutSingined.cshtml";
+    string xem = ViewData["Login"] as string;
+    string m = "before";
+   
+
+}
+
+<h1>@TempData["name"]</h1>
+<!-- Ưu đãi -->
+<div class="col-xs-12 no-padding v-margin-top-30 v-margin-bottom-30 hidden-xs">
+    <div class="col-xs-12 no-padding heading">
+        <h2 class="heading__title">Ưu đãi tốt nhất hôm nay</h2>
+        <p class="heading__description">Nhanh tay đặt ngay. Để mai sẽ lỡ</p>
+    </div>
+    <div>
+        <a href="About"><img src="~/Images/vinpearl-discover-nha-trang-1140x250.png" /></a>
+    </div>
+  
+
+</div>
+<!-- end_uu_dai -->
+<!-- most_place_favorite_VN -->
+<div class="col-xs-12 no-padding v-margin-top-30 v-margin-bottom-30">
+    <div class="col-xs-12 no-padding heading">
+        <h2 class="heading__title">Điểm đến yêu thích trong nước</h2>
+        <p class="heading__description">Lên rừng xuống biển. Trọn vẹn Việt Nam</p>
+    </div>
+    <!--<div class="headLineDivider"></div>-->
+    <div class="col-xs-12 no-padding">
+        <div class="grid__container grid__container--popular super-cards">
+
+            <div class="grid__item grid__item--1">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2019/03/07/16/phuquoc-755x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-phu-quoc" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Ph&#250; Quốc</p>
+
+                                <p class="description hidden-xs"> 216 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--2">
+                <div class="col-xs-12 super-card card-auto-height"
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2018/09/14/14/vungtau_2-370x395.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-vung-tau" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Vũng T&#224;u</p>
+
+                                <p class="description hidden-xs"> 99 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--3">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2018/09/14/14/nhatrang_1-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-nha-trang" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Nha Trang</p>
+
+                                <p class="description hidden-xs"> 113 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--4">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2018/09/14/14/quynhon_2-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-quy-nhon" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Quy Nhơn</p>
+
+                                <p class="description hidden-xs"> 20 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--5">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2018/11/05/11/undefined-8-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-phan-thiet" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Phan Thiết</p>
+
+                                <p class="description hidden-xs"> 93 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--6">
+                <div class="col-xs-12 super-card card-auto-height"
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2018/09/14/14/danang_2-370x395.png');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-da-nang" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Đ&#224; Nẵng</p>
+
+                                <p class="description hidden-xs"> 184 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--7">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2019/09/18/16/da-lat-755x190.png');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-da-lat" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Đ&#224; Lạt</p>
+
+                                <p class="description hidden-xs"> 146 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--8">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-sapa" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Sapa</p>
+
+                                <p class="description hidden-xs"> 57 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end_most_place_favorite_VN -->
+<!-- most_place_favorite_abroad -->
+<div class="col-xs-12 no-padding v-margin-top-30 v-margin-bottom-30">
+    <div class="col-xs-12 no-padding heading">
+        <h2 class="heading__title"> Điểm đến yêu thích nước ngoài</h2>
+        <p class="heading__description">Bao la thế giới. Bốn bể là nhà</p>
+    </div>
+    <!--<div class="headLineDivider"></div>-->
+    <div class="col-xs-12 no-padding">
+        <div class="grid__container grid__container--popular-2 super-cards">
+
+            <div class="grid__item grid__item--1">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2020/03/05/14/maldives-intinerary-gallery-six-senses-laamu-aerial-1500x675-cr-755x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-maldives-asia" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Maldives</p>
+
+                                <p class="description hidden-xs">67 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--2">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2020/03/05/14/switzerland-safest-country-feature-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-switzerland" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Switzerland</p>
+
+                                <p class="description hidden-xs">732 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--3">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2020/03/05/14/singapore-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-singapore-singapore" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Singapore</p>
+
+                                <p class="description hidden-xs">466 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--4">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2020/03/05/14/bangkok-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-bangkok" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Bangkok</p>
+
+                                <p class="description hidden-xs">2317 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--5">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('//cdn1.ivivu.com/iVivu/2020/03/05/15/slide-7-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-bali-indonesia" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Bali</p>
+
+                                <p class="description hidden-xs">2997 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end_most_place_favorite_abroad -->
+

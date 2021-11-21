@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHeaderAndFooter.cshtml";
+}
+
+@if (ViewBag.ListCount > 0)
+{
+    <div class="list_tour_cate">
+
+        @foreach (var item in ViewBag.ListTour)
+        {
+            <div class="box_tour_cate">
+                <h3 class="name_tour_cate">
+                    <a>@item.TenTour</a>
+                </h3>
+
+                <div class="col-md-3 col-sm-3 col-xs-3 col-480-12">
+                    <div class="row">
+                        <a href="#" class="img_tour_km h_6667z img_tour_cate">
+                            <img class="w_100 img_item_tour" src="@item.HinhAnh" alt="KHÁM PHÁ KHU NGHỈ DƯỠNG VINOASIS PHÚ QUỐC" style="height: 150.007px;">
+
+                            <div class="sale_tour_km">
+
+                                Giảm @item.Sale <span>%</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9 col-480-12">
+                    <div class="row">
+                        <div class="sub_tour_cate">
+                            <div class="info_tour_cate">
+                                <b>Khởi hành từ:</b>@item.DiemKhoiHanh<br>
+                                <b>Thời gian:</b> @item.SoNgay NGÀY @item.SoDem ĐÊM<br>
+
+                                <b>Giá tour:</b>@string.Format("{0:#,##0}",item.GiaTour) <br>
+                                <b>Khởi hành ngày:</b> @item.TimeKhoiHanh<br>
+                                <b>Giới thiệu tour: @item.GioiThieu</b>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="pull-right">
+                                    <input type="text" style="display:none" name="ten" value="">
+                                    <p class="oder_tour_cate" style="color:white"> <a href="@Url.Action("Index","Book",new { id = item.Id} )" target="_blank" style="color:white;">Đặt Tour</a></p>
+                                    <p class="view_tour_cate" style="color:white">@Html.ActionLink("Xem Chi Tiết", "DisplayDetail", new { id = item.Id })</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+}
+else
+{
+    <div><h2 style="padding-left: 100px;"> Không có kết quả nào tìm được</h2></div>
+}
+

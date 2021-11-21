@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHeaderAndFooter.cshtml";
+}
+
+@if (ViewBag.TieuDe == null)
+{
+    <!--search-->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+
+
+    <div class="tourHomeHeader" id="bg-banner-home" style="background-image: url(../../Images/backgroand_Search.jpg);">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 tourHomeSearchPanel no-padding">
+                        <div class="positionPanel">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding tourHomeSearchForm"
+                                 id="tour-form-panel">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding typeAHeadDiv"
+                                     id="typeAHeadDiv">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding tourHomeIntro">
+                                        <h1>Du lịch theo phong cách riêng</h1>
+                                        <h2>Trải nghiệm trọn vẹn - Giá cả phải chăng.</h2>
+                                    </div>
+                                    {
+                                    @using (Html.BeginForm("Index", "Trip", FormMethod.Get))
+                                    {
+                                        <div class="col-xs-12 search-form home-page">
+                                            <div class="row">
+                                                <div class="col-xs-12 v-margin-bottom-15 typeahead-container search-fullframe">
+                                                    <div class="col-xs-12 no-padding v_field">
+                                                        <div class="input-icon">
+
+                                                        </div>
+                                                        <input type="text"
+                                                               class="form-control v_field__input search-input typeahead"
+                                                               name="keyword" id="keyword"
+                                                               maxlength="200" placeholder="Bạn muốn đi đâu?" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-2 " style="float: right;">
+                                                    <button class="btn btn-action btn-block  search-form-button btn-big">
+                                                        Tìm
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--end_search-->
+}
+
+<div class="container">
+    <!--content_here-->
+    @if (ViewBag.TieuDe != null)
+    {
+        <h1>@ViewBag.TieuDe</h1>
+    }
+
+    <section class="content no-padding">
+        <div class="col-xs-12 no-padding">
+            <div class="col-xs-12 no-padding tourHomeContainer ">
+                <div class="col-xs-12 no-padding">
+                    <h3 class="localHeadLine hasLine">
+                        <a href="https://www.ivivu.com/du-lich/vi-vu-le-30-4/c12">
+                            <span>
+                                Tổng hợp các tour
+                            </span>
+                            <span class="readMoreTours hidden-xs">
+                                XEM THÊM TOURS <i class="glyphicon glyphicon-chevron-right"></i>
+                            </span>
+                            <span class="clearfix"></span>
+                        </a>
+                    </h3>
+
+                    @if (ViewBag.ListCount > 0)
+                    {
+                        <div class="row">
+
+                            @foreach (var item in ViewBag.ListTrip)
+                            {
+
+
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="col-xs-12 cardItem">
+                                        <a href="@Url.Action("DisplayTrip","Trip",new { id = item.Id})">
+                                            <div class="col-xs-12 no-padding cardItemContainer">
+                                                <div class="col-xs-12 no-padding cardItemImage">
+                                                    <img class="img-responsive lazy" src="~/Images/ivivu-hon-bay-canh-con-dao-360x225.jpg" alt="KHÁM PHÁ KHU NGHỈ DƯỠNG VINOASIS PHÚ QUỐC">
+
+                                                    <div class="cardItemPriceDivOuter">
+                                                        <div class="cardItemPriceDivInner">
+                                                            <span class="cardItemPriceAfterDiscount">
+                                                                <i class="glyphicon glyphicon-map-marker"></i>
+                                                                @item.DiemKhoiHanh
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 cardItemContent">
+                                                    <div class="col-xs-12 no-padding">
+                                                        <div class="col-xs-12 v-margin-bottom-10 cardItemTourNameDiv">
+                                                            <span class="cardItemTourName">
+                                                                @item.Name
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-xs-12 no-padding cardItemTourDetailDiv">
+                                                            <div class="col-xs-12 v-margin-bottom-10 hidden-xs">
+                                                                <div class="row">
+                                                                    <div class="col-xs-6">
+                                                                        <span>
+                                                                            <i class="glyphicon glyphicon-time"
+                                                                               data-toggle="tooltip"
+                                                                               title="Thời lượng tour"></i> @item.SoNgay Ngày
+                                                                            @item.SoDem Đêm
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="col-xs-6 text-right transportDiv">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 v-margin-bottom-5 cardItemDepartDiv">
+
+                                                                <ul class="tourListPros list-inline">
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cardItemPrice">
+                                                                <div class="tourBooking24H hidden" data-id="1327">
+                                                                    0
+                                                                    khách đặt trong 24h qua
+                                                                </div>
+                                                                <div class="clearfix visible-xs"></div>
+                                                                <span class="price vcolor-info">
+                                                                    @string.Format("{0:#,##0}", item.GiaTrip) <small class="textCurrency">VND</small>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div><h1>Services đang bảo trì.Mời quý khách quay lại sau!</h1></div>
+                    }
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </section><!-- /.content -->
+    <!--end_content-->
+
+</div><!-- /.container -->

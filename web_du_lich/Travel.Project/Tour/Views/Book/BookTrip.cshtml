@@ -1,0 +1,260 @@
+﻿@model Tour.Models.TourKhachHang
+
+@{
+    ViewBag.Title = "BookTrip";
+    Layout = "~/Views/Shared/NewFolder1/_Layout_Book.cshtml";
+    var a = TempData["GiaSauSale"].ToString();
+    var gia = int.Parse(a);
+}
+
+<!--Information_Of_User_Book_Tour-->
+<div class="col-md-9 col-sm-12 col-xs-12">
+
+    <div class="main_booking booktour-form">
+        <h2 class="name_tour_book">@ViewBag.TenTrip</h2>
+        <div class="clearfix"></div>
+        <div class="vc_row-fluid">
+
+            <!--start_form-->
+            <div class="note"></div>
+            <h2>Thông tin khách hàng</h2>
+            @using (Html.BeginForm("BookTrip", "Book", FormMethod.Post))
+            {
+
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Họ và Tên</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.FullName)
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Địa chỉ</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.Address)
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Email</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.Email)
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Điện Thoại</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.Phone)
+                    </div>
+                </div>
+                <h2>Thông tin tour</h2>
+
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Ngày khởi hành</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.TimeKhoiHanh, new { placeholder = "dd/mm/yyy" })
+
+
+                    </div>
+
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Tổng số khách</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container" style="display:flex;">
+
+                        @*<div>@Html.TextBoxFor(model => model.bookTour.NguoiLon, new { placeholder = "Người lớn" })</div>&nbsp;&nbsp;
+        <div>@Html.TextBoxFor(model => model.bookTour.TreEm, new { placeholder = "Trẻ em" })</div>*@
+
+                        <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-">
+                            @*<input id="NguoiLon" aria-label="quantity" class="input-qty input1" max="15" min="1" name="NguoiLon" type="number" value="1">*@
+                            @Html.TextBoxFor(model => model.bookTour.NguoiLon, new { @class = "input-qty input1", @Value = "1", Min = "1", Max = "15" })
+                            <input class="plus is-form" type="button" value="+">
+                            <span>Người lớn</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <!---->
+                            <input class="minus1 is-form" type="button" value="-">
+                            @*<input id="TreEm" aria-label="quantity" class="input-qty input2" max="15" min="1" name="TreEm" type="number" value="1">*@
+                            @Html.TextBoxFor(model => model.bookTour.TreEm, new { @class = "input-qty input2", @Value = "1", Min = "1", Max = "15" })
+                            <input class="plus1 is-form" type="button" value="+">
+                            <span>Trẻ em</span>
+                        </div>
+
+                      
+
+                        <style>
+                            .buttons_added {
+                                opacity: 1;
+                                /* display: inline-block; */
+                                display: -ms-inline-flexbox;
+                                /* display: inline-flex; */
+                                white-space: nowrap;
+                                vertical-align: top;
+                                width: 40px;
+                            }
+
+                            .result {
+                                width: 80px;
+                            }
+
+                            .is-form {
+                                overflow: hidden;
+                                position: relative;
+                                background-color: #f9f9f9;
+                                height: 4rem;
+                                width: 0.5rem;
+                                padding: 0;
+                                text-shadow: 1px 1px 1px #fff;
+                                border: 1px solid #ddd;
+                            }
+
+                                .is-form:focus,
+                                .input-text:focus {
+                                    outline: none;
+                                }
+
+                                .is-form.minus {
+                                    border-radius: 4px 0 0 4px;
+                                }
+
+                                .is-form.plus {
+                                    border-radius: 0 4px 4px 0;
+                                }
+
+                            .input-qty {
+                                background-color: #fff;
+                                height: 4rem;
+                                width: 2.5rem;
+                                text-align: center;
+                                font-size: 1.5rem;
+                                display: inline-block;
+                                vertical-align: top;
+                                margin: 0;
+                                border-top: 1px solid #ddd;
+                                border-bottom: 1px solid #ddd;
+                                border-left: 0;
+                                border-right: 0;
+                                padding: 0;
+                            }
+
+                                .input-qty::-webkit-outer-spin-button,
+                                .input-qty::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+                        </style>
+
+
+                    </div>
+
+                </div>
+
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Tổng tiền</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                     
+                            <span id="total">@gia đ</span>
+                       
+                    </div>
+                </div>
+
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Thông điệp</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextAreaFor(model => model.bookTour.ThongDiep, new { placeholder = "Your idea this tour...", cols = 30, rows = 5 })
+                    </div>
+                </div>
+
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        <div class="clickcheck">
+                            <button type="submit" class="btn btn-danger btnregistertrial">
+                                <i class="fa fa-paper-plane-o"></i>&nbsp;Đặt Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!--end_form-->
+        </div>
+    </div>
+
+    <div class="clearfix clearfix-30"></div>
+</div>
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script>
+
+    $('input.input1').each(function () {
+        var $this = $(this),
+            qty = $this.parent().find('.is-form'),
+            min = Number($this.attr('min')),
+            max = Number($this.attr('max'))
+        if (min == 0) {
+            var d = 0
+        } else d = min
+        $(qty).on('click', function () {
+            if ($(this).hasClass('minus')) {
+                if (d > min) {
+                    d += -1;
+                     var total = d * @gia;
+                    $("#total").html(`$${total.toFixed(0)}`)
+                }
+            } else if ($(this).hasClass('plus')) {
+                var x = Number($this.val()) + 1
+                if (x <= max) {
+                    d += 1;
+                    var total = d * @gia;
+                    $("#total").html(`$${total.toFixed(0)}`)
+                    // document.getElementById("total").innerText = 1
+                }
+            }
+            $this.attr('value', d).val(d)
+        })
+    })
+    //
+    $('input.input2').each(function () {
+        var $this = $(this),
+            qty = $this.parent().find('.is-form'),
+            min = Number($this.attr('min')),
+            max = Number($this.attr('max'))
+        if (min == 0) {
+            var d = 0
+        } else d = min
+        $(qty).on('click', function () {
+            if ($(this).hasClass('minus1')) {
+                if (d > min) {
+                    d += -1;
+                   
+                }
+            } else if ($(this).hasClass('plus1')) {
+                var x = Number($this.val()) + 1
+                if (x <= max) {
+                    d += 1;
+                }
+            }
+            $this.attr('value', d).val(d)
+        })
+    })
+
+</script>
+
+<!--end_Information_Of_User_Book_Tour-->

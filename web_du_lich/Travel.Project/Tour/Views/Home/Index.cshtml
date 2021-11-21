@@ -1,0 +1,303 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHeaderAndFooter.cshtml";
+}
+
+<!--search-->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+
+
+    <div class="tourHomeHeader" id="bg-banner-home" style="background-image: url(../../Images/backgroand_Search.jpg);">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 tourHomeSearchPanel no-padding">
+                        <div class="positionPanel">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding tourHomeSearchForm"
+                                 id="tour-form-panel">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding typeAHeadDiv"
+                                     id="typeAHeadDiv">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding tourHomeIntro">
+                                        <h1>Du lịch theo phong cách riêng</h1>
+                                        <h2>Trải nghiệm trọn vẹn - Giá cả phải chăng.</h2>
+                                    </div>
+                                    {
+                                    @using (Html.BeginForm("Index", "Hotel", FormMethod.Get))
+                                    {
+                                        <div class="col-xs-12 search-form home-page">
+                                            <div class="row">
+                                                <div class="col-xs-12 v-margin-bottom-15 typeahead-container search-fullframe">
+                                                    <div class="col-xs-12 no-padding v_field">
+                                                        <div class="input-icon">
+
+                                                        </div>
+                                                        <input type="text"
+                                                               class="form-control v_field__input search-input typeahead"
+                                                               name="keyword" id="keyword"
+                                                               maxlength="200" placeholder="Bạn muốn đi đâu?" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-2 " style="float: right;">
+                                                    <button class="btn btn-action btn-block  search-form-button btn-big">
+                                                        Tìm
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--end_search-->
+
+
+<!-- Ưu đãi -->
+<div class="col-xs-12 no-padding v-margin-top-30 v-margin-bottom-30 hidden-xs">
+    <div class="col-xs-12 no-padding heading">
+        <h2 class="heading__title">Ưu đãi tốt nhất hôm nay</h2>
+        <p class="heading__description">Nhanh tay đặt ngay. Để mai sẽ lỡ</p>
+    </div>
+    <div>
+        <a href="About"><img src="~/Images/vinpearl-discover-nha-trang-1140x250.png" /></a>
+    </div>
+</div>
+<!-- end_uu_dai -->
+<!-- most_place_favorite_VN -->
+<div class="col-xs-12 no-padding v-margin-top-30 v-margin-bottom-30">
+    <div class="col-xs-12 no-padding heading">
+        <h2 class="heading__title">Điểm đến yêu thích trong nước</h2>
+        <p class="heading__description">Lên rừng xuống biển. Trọn vẹn Việt Nam</p>
+    </div>
+    <!--<div class="headLineDivider"></div>-->
+    <div class="col-xs-12 no-padding">
+        <div class="grid__container grid__container--popular super-cards">
+
+            <div class="grid__item grid__item--1">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/phuquoc-755x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index", "Hotel", new { id = '1' })" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Ph&#250; Quốc</p>
+
+                                <p class="description hidden-xs"> 216 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--2">
+                <div class="col-xs-12 super-card card-auto-height"
+                     style="background-image: url('../../Images/vungtau_2-370x395.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '2'})" target="_blank">
+
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Vũng T&#224;u</p>
+
+                                <p class="description hidden-xs"> 99 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--3">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/nhatrang_1-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '3'})" target="_blank">
+
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Nha Trang</p>
+
+                                <p class="description hidden-xs"> 113 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--4">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/quynhon_2-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '4'})" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Quy Nhơn</p>
+
+                                <p class="description hidden-xs"> 20 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--5">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/phanthiet.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '5'})" target="_blank">
+
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Phan Thiết</p>
+
+                                <p class="description hidden-xs"> 93 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--6">
+                <div class="col-xs-12 super-card card-auto-height"
+                     style="background-image: url('../../Images/danang_2-370x395.png');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '6'})" target="_blank">
+
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Đ&#224; Nẵng</p>
+
+                                <p class="description hidden-xs"> 184 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--7">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/da-lat-755x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '7'})" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Đ&#224; Lạt</p>
+
+                                <p class="description hidden-xs"> 146 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--8">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/sa-pa-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="@Url.Action("Index","Hotel",new { id = '8'})" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Sapa</p>
+
+                                <p class="description hidden-xs"> 57 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end_most_place_favorite_VN -->
+<!-- most_place_favorite_abroad -->
+<div class="col-xs-12 no-padding v-margin-top-30 v-margin-bottom-30">
+    <div class="col-xs-12 no-padding heading">
+        <h2 class="heading__title"> Điểm đến yêu thích nước ngoài</h2>
+        <p class="heading__description">Bao la thế giới. Bốn bể là nhà</p>
+    </div>
+    <!--<div class="headLineDivider"></div>-->
+    <div class="col-xs-12 no-padding">
+        <div class="grid__container grid__container--popular-2 super-cards">
+
+            <div class="grid__item grid__item--1">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/maldives-intinerary-gallery-six-senses-laamu-aerial-1500x675-cr-755x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-maldives-asia" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Maldives</p>
+
+                                <p class="description hidden-xs">67 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--2">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/switzerland-safest-country-feature-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-switzerland" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Switzerland</p>
+
+                                <p class="description hidden-xs">732 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--3">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/singapore-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-singapore-singapore" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Singapore</p>
+
+                                <p class="description hidden-xs">466 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--4">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/bangkok-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-bangkok" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Bangkok</p>
+
+                                <p class="description hidden-xs">2317 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item grid__item--5">
+                <div class="col-xs-12 super-card "
+                     style="background-image: url('../../Images/slide-7-cr-370x190.jpg');">
+                    <!--style="background-image: url('img');"-->
+                    <a href="/khach-san-bali-indonesia" target="_blank">
+                        <div class="col-xs-12 card-bg">
+                            <div class="info">
+                                <p class="title">Bali</p>
+
+                                <p class="description hidden-xs">2997 khách sạn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end_most_place_favorite_abroad -->

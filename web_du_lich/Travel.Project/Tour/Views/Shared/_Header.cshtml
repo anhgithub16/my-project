@@ -1,0 +1,258 @@
+﻿@* header *@
+
+<header class="main-header ivivu-main-header">
+    <input type="hidden" id="hdhdhdhhdhdhdhdhdhd" />
+    <input type="hidden" id="token_change" />
+    <input type="hidden" id="datepicker-temp-chkin" value="03-03-2021">
+    <input type="hidden" id="datepicker-temp-chkout" value="04-03-2021">
+    <nav class="navbar" style="border:0px solid transparent;">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navbar-header">
+                <a href="@Url.Action("Index","Home")" class="navbar-brand">
+                    <img src="~/Images/logo.svg" alt="ivivu">
+
+                </a>
+            </div>
+            <!-- end logo -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="@Url.Action("Index","Home")">
+                            Khách sạn <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Index","Trip")">Tours</a></li>
+                    <li><a href="#">Vé máy bay</a></li>
+                    <li><a href="#">Ăn uống</a></li>
+                    
+                </ul>
+            </div>
+
+         
+            <!-- /.navbar-collapse -->
+
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    
+
+
+                    <li class="visible-xs">
+                        <div class="hotline">
+                            <div class="hotline-item">
+                                <a class="hotline-link" id="MobileHotlineNumber"
+                                   href="tel:19001870"><i class="fa fa-phone"></i> 1900 1870</a>
+                            </div>
+                            <div class="hotline-item">
+                                <div class="dropdown hotline-dropdown">
+                                    <p class="hotline-location pull-right dropdown-toggle" data-toggle="dropdown">
+                                        <span class="v-margin-right-5" id="MobileTime">
+                                            <i class="fa fa-clock-o"></i>
+                                            7h30 → 21h
+                                        </span>
+                                        <i class="fa fa-map-marker"></i> <span id="mobileDisplayName">
+                                            iVIVU
+                                            HCM
+                                        </span> <i class="fa fa-angle-down"></i>
+                                    </p>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li onclick="HeaderHotline('SG')">
+                                            <div class="hotline-dd-item">
+                                                <span class="pull-left v-padding-right-5"> Hồ Chí Minh </span>
+                                                <span class="pull-right vcolor-warning">1900 1870</span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+                                        <li onclick="HeaderHotline('HN')">
+                                            <div class="hotline-dd-item">
+                                                <span class="pull-left v-padding-right-5"> Hà Nội </span>
+                                                <span class="pull-right vcolor-warning">1900 2045</span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+                                        <li onclick="HeaderHotline('CT')">
+                                            <div class="hotline-dd-item">
+                                                <span class="pull-left v-padding-right-5"> Cần Thơ </span>
+                                                <span class="pull-right vcolor-warning">1900 2087</span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- START Member Menu -->
+                    <!-- Login -->
+                    <li class="dropdown user-login" id="UserLogin">
+                        <!--Image acount-->
+                        <div class="img-wrapper">
+                            <img class="img-circle"
+                                 data-src="https://res.ivivu.com/hotel/img/avatars/avatar-default-white.svg"
+                                 src="https://res.ivivu.com/hotel/img/avatars/avatar-default-white.svg">
+                        </div>
+                        @Html.ActionLink("Tài Khoản", "Login", "Account")
+                    </li>
+                    <!-- END Member Menu -->
+                    <!-- START Payment Login -->
+                    <li class="dropdown user-login hidden" id="UserMenu">
+                        <!--add class logged-in-->
+                       
+                        <ul class="dropdown-menu member-dropdown-menu" role="menu">
+
+                            
+
+                        </ul>
+                    </li>
+                    <!-- END Payment Login -->
+                    <li class="hidden-xs hidden-sm">
+                        <div class="hotline">
+                            <div class="hotline-item">
+                                <a class="hotline-link" id="DeskHotlineNumber" href="tel:19001870">
+                                     1900 2045
+                                </a>
+                            </div>
+                            <div class="hotline-item">
+                                <div class="dropdown hotline-dropdown">
+                                    <p class="hotline-location pull-right dropdown-toggle" data-toggle="dropdown">
+                                        <span class="v-margin-right-5" id="DeskTime">
+                                            
+                                            7h30 → 21h
+                                        </span>
+                                        <span class="visible-lg-inline-block"
+                                                                               id="DeskDisplayName">Hà Nội </span> <span class="hidden-lg">
+                                            iVIVU
+                                            HCM
+                                        </span> 
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!-- BEGIN TOPSEARCH -->
+            <!-- END TOPSEARCH -->
+
+
+            <div class="col-xs-12 header-search-form__outer" style="display:none;">
+                <div class="container">
+                    <div class="searchbox-wrap clearfix">
+                        <form id="header-search-form" action="//www.ivivu.com/tim-kiem" method="GET">
+                            <div class="col-xs-12 header-search-form">
+                                <div class="col-xs-12 col-sm-5 col-md-5 hotel-div">
+                                    <div class="form-group ">
+                                        <label class="control-label ">Tìm nhanh khách sạn</label>
+                                        <input type="text" class="form-control typeahead " maxlength="255"
+                                               id="search-header-text" name="q" autocomplete="off"
+                                               placeholder="Nhập tên thành phố, khu vực, khách sạn">
+
+                                        <input type="hidden" id="linkStore ">
+                                        <div id="header-search-autocomplete" class="search-autocomplete">
+                                            <div class="autocomplete-wrap"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 no-padding search-quantity">
+                                    <div class="col-xs-5 date-div check-in ">
+                                        <div class="form-group has-feedback date-menu-checkin">
+                                            <label class="control-label">Nhận phòng</label>
+                                            <input readonly type="text" class="form-control input-white"
+                                                   maxlength="12" id="datepicker-menu-chkin" name="di"
+                                                   class="datepicker-chkin" value="03-03-2021">
+                                            <span class="fa fa-calendar-o form-control-feedback"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-2 select-div" style="padding-left:0; padding-right:0;">
+
+                                        <div class="form-group ">
+                                            <label class="control-label">Số đêm</label>
+                                            <div>
+                                                <select id="datepicker-menu-nights" name="dn" class="form-control"
+                                                        style="border-right-width: 1.5px">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+
+                                                    <option value="0">30+</option>
+                                                </select>
+                                                <span class="fa fa-angle-down  select-icon"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-xs-5 date-div check-out ">
+                                        <div class="form-group has-feedback">
+                                            <label class="control-label">Trả phòng </label>
+                                            <input readonly type="text" class="form-control input-white"
+                                                   maxlength="12" id="datepicker-menu-chkout" name="do"
+                                                   class="datepicker-chkout" value="04-03-2021">
+                                            <span class="fa fa-calendar-o form-control-feedback"></span>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 action-div">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label hidden-xs">&nbsp;</label>
+                                        <button class="btn btn-action btn-block " id="header-search-button">
+                                            Tìm
+                                            kiếm
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+
+@*end_header*@

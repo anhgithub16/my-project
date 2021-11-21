@@ -1,0 +1,108 @@
+﻿@model Tour.Models.TourKhachHang
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/NewFolder1/_Layout_Book.cshtml";
+}
+
+<!--Information_Of_User_Book_Tour-->
+<div class="col-md-9 col-sm-12 col-xs-12">
+    
+    <div class="main_booking booktour-form">
+        <h2 class="name_tour_book">@ViewBag.TenTour</h2>
+        <div class="clearfix"></div>
+        <div class="vc_row-fluid">
+
+            <!--start_form-->
+            <div class="note"></div>
+            <h2>Thông tin khách hàng</h2>
+            @using (Html.BeginForm("Index", "Book", FormMethod.Post))
+            {
+               
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Họ và Tên</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.FullName)
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Địa chỉ</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.Address)
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Email</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.Email)
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Điện Thoại</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.khachHang.Phone)
+                    </div>
+                </div>
+                <h2>Thông tin tour</h2>
+
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Ngày khởi hành</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextBoxFor(model => model.TimeKhoiHanh, new { placeholder = "dd/mm/yyy" })
+
+
+                    </div>
+
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Tổng số khách</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container" style="display:flex;">
+
+                        <div>@Html.TextBoxFor(model => model.bookTour.NguoiLon,new { placeholder="Người lớn"})</div>&nbsp;&nbsp;
+                        <div>@Html.TextBoxFor(model => model.bookTour.TreEm ,new { placeholder="Trẻ em"})</div>
+
+                    </div>
+
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                        <span>Thông điệp</span>
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        @Html.TextAreaFor(model => model.bookTour.ThongDiep, new { placeholder = "Your idea this tour...", cols = 30, rows = 5 })
+                    </div>
+                </div>
+                <div class="vc_span12 wpb_column vc_column_container">
+                    <div class="vc_span3 wpb_column vc_column_container">
+                    </div>
+                    <div class="vc_span9 wpb_column vc_column_container">
+                        <div class="clickcheck">
+                            <button type="submit" class="btn btn-danger btnregistertrial">
+                                <i class="fa fa-paper-plane-o"></i>&nbsp;Đặt Tour
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!--end_form-->
+        </div>
+    </div>
+
+    <div class="clearfix clearfix-30"></div>
+</div>s
+<!--end_Information_Of_User_Book_Tour-->
+

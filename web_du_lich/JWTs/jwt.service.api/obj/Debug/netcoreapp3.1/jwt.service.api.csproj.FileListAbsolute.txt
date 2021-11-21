@@ -1,0 +1,6 @@
+F:\Workspace\asp.net\asp.net proj\JWTs\jwt.service.api\obj\Debug\netcoreapp3.1\jwt.service.api.csprojAssemblyReference.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\jwt.service.api\obj\Debug\netcoreapp3.1\jwt.service.api.AssemblyInfoInputs.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\jwt.service.api\obj\Debug\netcoreapp3.1\jwt.service.api.AssemblyInfo.cs
+F:\Workspace\asp.net\asp.net proj\JWTs\jwt.service.api\obj\Debug\netcoreapp3.1\jwt.service.api.csproj.CoreCompileInputs.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\jwt.service.api\obj\Debug\netcoreapp3.1\jwt.service.api.MvcApplicationPartsAssemblyInfo.cs
+F:\Workspace\asp.net\asp.net proj\JWTs\jwt.service.api\obj\Debug\netcoreapp3.1\jwt.service.api.MvcApplicationPartsAssemblyInfo.cache

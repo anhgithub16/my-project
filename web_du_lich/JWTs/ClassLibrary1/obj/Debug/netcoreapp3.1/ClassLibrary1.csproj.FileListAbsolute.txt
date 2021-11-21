@@ -1,0 +1,9 @@
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\bin\Debug\netcoreapp3.1\ClassLibrary1.deps.json
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\bin\Debug\netcoreapp3.1\ClassLibrary1.dll
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\bin\Debug\netcoreapp3.1\ClassLibrary1.pdb
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\obj\Debug\netcoreapp3.1\ClassLibrary1.csprojAssemblyReference.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\obj\Debug\netcoreapp3.1\ClassLibrary1.AssemblyInfoInputs.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\obj\Debug\netcoreapp3.1\ClassLibrary1.AssemblyInfo.cs
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\obj\Debug\netcoreapp3.1\ClassLibrary1.csproj.CoreCompileInputs.cache
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\obj\Debug\netcoreapp3.1\ClassLibrary1.dll
+F:\Workspace\asp.net\asp.net proj\JWTs\ClassLibrary1\obj\Debug\netcoreapp3.1\ClassLibrary1.pdb
